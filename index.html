@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>EmojiScript</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" />
-    <link rel="stylesheet" href="src/style.css" />
-    <link rel="stylesheet" href="src/bottom.css" />
-    <link rel="stylesheet" href="src/body.css" />
-    <link rel="stylesheet" href="src/head.css" />
-    <link rel="stylesheet" href="src/canvas.css" />
-    <link rel="stylesheet" href="src/console.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
-    <script src="node_modules/acorn/dist/acorn.js"></script>
-    <script src="emojicode/defaultFunctions/index.js"></script>
-    <script src="src/control.js"></script>
-    <script src="node_modules/blockly/blockly.min.js"></script>
-    <script src="node_modules/blockly/msg/ja.js"></script>
-    <script src="node_modules/blockly/blocks_compressed.js"></script>
-    <script src="node_modules/blockly/javascript_compressed.js"></script>
+<head>
+  <title>EmojiScript</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" />
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="src/bottom.css" />
+  <link rel="stylesheet" href="src/body.css" />
+  <link rel="stylesheet" href="src/head.css" />
+  <link rel="stylesheet" href="src/canvas.css" />
+  <link rel="stylesheet" href="src/console.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
-    <script src="emojicode/1-logic/logic_stub.js"></script>
-    <script src="emojicode/2-loops/loops_stub.js"></script>
-    <script src="emojicode/3-math/math_stub.js"></script>
-    <script src="emojicode/4-string/string_stub.js"></script>
-    <script src="emojicode/5-list/list_stub.js"></script>
-    <script src="emojicode/6-color/color_stub.js"></script>
-    <script src="emojicode/7-sprite/sprite_stub.js"></script>
-    <script src="emojicode/8-sound/sound_stub.js"></script>
+  <script src="node_modules/acorn/dist/acorn.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="jquery.tab/index.js"></script>
 
-    <script src="src/workspace.js" defer></script>
-    
+  <script src="emojicode/defaultFunctions/index.js"></script>
+  <script src="control/index.js"></script>
+  <script src="tab/index.js"></script>
+  <script src="console/index.js"></script>
 
-    <link rel="stylesheet" href="src/workspace-color.css">
-  </head>
+  <script src="node_modules/blockly/blockly.min.js"></script>
+  <script src="node_modules/blockly/msg/ja.js"></script>
+  <script src="node_modules/blockly/blocks_compressed.js"></script>
+  <script src="node_modules/blockly/javascript_compressed.js"></script>
 
-  <body>
-    <div class="head">
-      <span class="text">EmojiScript</span>
-      <button id="file">ファイル</button><button id="edit">編集</button><button id="help">デバッグ</button><button id="help">ヘルプ</button>
-    </div>
+  <script src="emojicode/1-logic/logic_stub.js"></script>
+  <script src="emojicode/2-loops/loops_stub.js"></script>
+  <script src="emojicode/3-math/math_stub.js"></script>
+  <script src="emojicode/4-string/string_stub.js"></script>
+  <script src="emojicode/5-list/list_stub.js"></script>
+  <script src="emojicode/6-color/color_stub.js"></script>
+  <script src="emojicode/7-sprite/sprite_stub.js"></script>
+  <script src="emojicode/8-sound/sound_stub.js"></script>
 
-    <div class="body">
-      <div class="code" id="code"></div>
-      <div class="run">
-        <div class="button-body">
-          <div class="left">
-            <button class="material-symbols-outlined flag" id="flag" onclick="pushFlag();">flag</button>
-            <button class="material-symbols-outlined circle">circle</button>
-          </div>
-          <div class="right">
-            <button class="material-symbols-outlined plus">zoom_in</button>
-            <button class="material-symbols-outlined minus">zoom_out</button>
-            <button class="material-symbols-outlined fullscreen">fullscreen</button>
-          </div>
-        </div>
-        <div class="run-canvas" id="run-canvas"></div>
+  <script src="workspace.js" defer></script>
+
+
+  <link rel="stylesheet" href="src/workspace-color.css">
+</head>
+
+<body>
+  <div class="head">
+    <span class="text">EmojiScript</span>
+    <button id="file">ファイル</button><button id="edit">編集</button><button id="help">デバッグ</button><button
+      id="help">ヘルプ</button>
+  </div>
 
         <div class="tab">
           <div class="list">コンソール</div>
