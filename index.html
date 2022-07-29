@@ -50,18 +50,108 @@
       id="help">ヘルプ</button>
   </div>
 
-        <div class="tab">
-          <div class="list">コンソール</div>
-          <div class="list">スプライト</div>
-          <div class="list">音</div>
+  <div class="body">
+    <div class="code" id="code"></div>
+    <div class="run">
+      <div class="button-body">
+        <div class="left">
+          <button class="material-symbols-outlined flag" id="flag" onclick="pushFlag();">flag</button>
+          <button class="material-symbols-outlined circle">circle</button>
         </div>
-        <div class="console">
-          <div class="header">
-            <div id="logArea"></div>
-          </div>
+        <div class="right">
+          <button class="material-symbols-outlined plus">zoom_in</button>
+          <button class="material-symbols-outlined minus">zoom_out</button>
+          <button class="material-symbols-outlined fullscreen">fullscreen</button>
         </div>
       </div>
+      <div class="run-canvas" id="run-canvas"></div>
+
+      <div id="right-bottom-tab">
+        <ul class="tab">
+          <li class="list"><img src="https://img.icons8.com/fluency/48/000000/circled-play.png" class="icon" />コード実行
+          </li>
+          <li class="list"><img src="https://img.icons8.com/stickers/100/000000/cat.png" class="icon" />スプライト</li>
+          <li class="list"><img src="https://img.icons8.com/color/48/000000/low-volume--v1.png" class="icon" />音</li>
+        </ul>
+        <div class="tab-body">
+
+          <div id="runcode-tab" class="flex">
+            <ul class="selector">
+              <li><img src="https://img.icons8.com/fluency/48/000000/console.png" class="icon" />コンソール</li>
+              <li><img src="https://img.icons8.com/fluency/48/000000/box-important.png" class="icon" />エラー</li>
+              <li><img src="https://img.icons8.com/color/48/000000/javascript--v1.png" class="icon" />出力JS</li>
+              <li><img src="https://img.icons8.com/fluency/48/000000/deciduous-tree.png" class="icon" />出力AST</li>
+              <!-- <li><img src="https://img.icons8.com/fluency/48/000000/details-pane.png" class="icon" />詳細</li> -->
+            </ul>
+            <div class="runcode-body" id="console">
+              <div class="no-run">
+                まだ一度も実行されていません。<br>
+                実行するとここに情報が表示されます。
+                <button onclick="pushFlag();"><img
+                    src="https://img.icons8.com/fluency/48/000000/circled-play.png" />実行</button>
+              </div>
+              <!--<div class="logArea" id="logArea">
+                
+              </div>-->
+            </div>
+            <div class="runcode-body" id="error">
+              <div class="no-run">
+                まだ一度も実行されていません。<br>
+                実行するとここに情報が表示されます。
+                <button onclick="pushFlag();"><img
+                    src="https://img.icons8.com/fluency/48/000000/circled-play.png" />実行</button>
+              </div>
+              <!-- //OK
+                <div class="success material-symbols-outlined" style="font-size: 40pt;">done</div>
+                <span class="text">エラーは発見されませんでした</span>
+              -->
+
+              <!-- //error detected
+                <div class="error material-symbols-outlined" style="font-size: 40pt;">close</div>
+                <span class="text">エラーが発見されました。</span>
+                <div class="message">
+                  メッセージ
+                </div>
+              -->
+            </div>
+            <div class="runcode-body" id="outputJS">
+              <div class="no-run">
+                まだ一度も実行されていません。<br>
+                実行するとここに情報が表示されます。
+                <button onclick="pushFlag();"><img
+                    src="https://img.icons8.com/fluency/48/000000/circled-play.png" />実行</button>
+              </div>
+            </div>
+            <div class="runcode-body" id="outputAST">
+              <div class="no-run">
+                まだ一度も実行されていません。<br>
+                実行するとここに情報が表示されます。
+                <button onclick="pushFlag();"><img
+                    src="https://img.icons8.com/fluency/48/000000/circled-play.png" />実行</button>
+              </div>
+            </div>
+            <!-- <div class="runcode-body" id="detail">
+              <div class="no-run">
+                まだ一度も実行されていません。<br>
+                実行するとここに情報が表示されます。
+                <button onclick="pushFlag();"><img
+                    src="https://img.icons8.com/fluency/48/000000/circled-play.png" />実行</button>
+
+              </div>
+            </div>
+          -->
+          </div>
+        </div>
+        <div class="tab-body">
+
+        </div>
+        <div class="tab-body">
+          c
+        </div>
+      </div>
+
     </div>
+  </div>
 
     <div class="bottom">
       <div class="left_to">
