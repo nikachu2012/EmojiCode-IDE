@@ -14,14 +14,17 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
+  
   <script src="node_modules/acorn/dist/acorn.js"></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="./node_modules/toastr/build/toastr.min.css">
+  <script src="./node_modules/toastr/build/toastr.min.js"></script>
+
   <script src="jquery.tab/index.js"></script>
 
   <script src="emojicode/defaultFunctions/index.js"></script>
   <script src="control/index.js"></script>
   <script src="tab/index.js"></script>
-  <script src="console/index.js"></script>
 
   <script src="node_modules/blockly/blockly.min.js"></script>
   <script src="node_modules/blockly/msg/ja.js"></script>
@@ -153,14 +156,36 @@
     </div>
   </div>
 
-    <div class="bottom">
-      <div class="left_to">
-        EmojiScript beta2
-        <!-- <div class="button">GG</div> -->
-      </div>
-      <div class="right_to">Created&nbsp;by&nbsp;<a href="https://github.com/nikachu2012">nikachu2012</a></div>
+  <div class="bottom">
+    <div class="left_to">
+      EmojiCode beta2
+      <!-- <div class="button">GG</div> -->
     </div>
+    <div class="right_to">Created&nbsp;by&nbsp;<a href="https://github.com/nikachu2012">nikachu2012</a></div>
+  </div>
 
-    <script src="src/console.js"></script>
-  </body>
+  <script src="console/index.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+
+  <script>
+    window.onload = function () {
+      // ブラウザ上に表示する文字列を保持する一時変数
+      let outstr = "";
+      // console.logの挙動
+      console.log = (...args) => {
+        for (let arg of args) {
+          // console.logに入力された文字列を改行つきで保持
+          outstr = arg + "<br>";
+        }
+        // HTMLのid="console"に対して文字列outstrを設定する
+        //document.getElementById("console").innerHTML = outstr;
+
+        log(outstr)
+      }
+    }
+  </script>
+</body>
+
 </html>

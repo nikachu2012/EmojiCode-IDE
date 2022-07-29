@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@blockly/theme-dark": "^3.0.14",
+    "highlight.js": "^11.6.0",
     "jquery": "^3.6.0",
+    "toastr": "^2.1.4"
   }
 }
