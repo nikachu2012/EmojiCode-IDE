@@ -1,5 +1,5 @@
 Promise.all(
-    ["../emojicode/build/workspace.xml", "../emojicode/build/toolbox.xml"].map(async file => {
+    ["./emojicode/build/workspace.xml", "./emojicode/build/toolbox.xml"].map(async file => {
         return fetch(file).then(
             (res) => {
                 return res.text();
@@ -79,49 +79,49 @@ Promise.all(
 Blockly.HSV_SATURATION = 0.45;
 Blockly.HSV_VALUE = 0.65;
 
-fetch('../emojicode/1-logic/logic_def.js')
+fetch('./emojicode/1-logic/logic_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
     });
 
-fetch('../emojicode/2-loops/loops_def.js')
+fetch('./emojicode/2-loops/loops_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
     });
 
-fetch('../emojicode/3-math/math_def.js')
+fetch('./emojicode/3-math/math_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
     });
 
-fetch('../emojicode/4-string/string_def.js')
+fetch('./emojicode/4-string/string_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
     });
 
-fetch('../emojicode/5-list/list_def.js')
+fetch('./emojicode/5-list/list_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
     });
 
-fetch('../emojicode/6-color/color_def.js')
+fetch('./emojicode/6-color/color_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
     });
 
-fetch('../emojicode/7-sprite/sprite_def.js')
+fetch('./emojicode/7-sprite/sprite_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
     });
 
-fetch('../emojicode/8-sound/sound_def.js')
+fetch('./emojicode/8-sound/sound_def.js')
     .then(response => response.json())
     .then(data => {
         Blockly.defineBlocksWithJsonArray(data);
