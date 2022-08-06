@@ -107,8 +107,7 @@
 
 .runcode-body {
   width: 362px;
-  height: 367px;
-
+  height: calc(100vh - 505px);
   overflow-y: scroll;
 
   -ms-overflow-style: none;
