@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app" style="width: 100vw; height:100vh;"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
+
+  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+    <category name="動き" colour="#9fa55b">
+      <block type="sprite_sayuu">
+        <value name="value">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_rotate_right">
+        <value name="rotate">
+          <block type="math_number">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_rotate_left">
+        <value name="value">
+          <block type="math_number">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_move">
+        <value name="x">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="y">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_move_seconds">
+        <value name="x">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="y">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="seconds">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_rotate">
+        <value name="value">
+          <block type="math_number">
+            <field name="NUM">5</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_move_xdake">
+        <value name="x">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_move_xdutu">
+        <value name="x">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_move_ydake">
+        <value name="y">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_move_ydutu">
+        <value name="y">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="sprite_end"></block>
+      <block type="sprite_rotate_houhou">
+        <field name="NAME">left-right</field>
+      </block>
+      <block type="sprite_const_xpos"></block>
+      <block type="sprite_const_ypos"></block>
+      <block type="sprite_const_rotate"></block>
+    </category>
+    <category name="音" colour="#995ba5">
+      <block type="sound_play"></block>
+      <block type="sound_pause"></block>
+      <block type="sound_effect_select">
+        <field name="select">pitch</field>
+        <value name="effect_level">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="sound_effect_dutu">
+        <field name="select">pitch</field>
+        <value name="effect_level">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="sound_volume_select">
+        <value name="volume">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="sound_volume_dutu">
+        <value name="volume">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="sound_tone">
+        <field name="select">2</field>
+        <value name="onkai">
+          <block type="string">
+            <field name="input">C4</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category name="制御" colour="#5b80a5">
+      <block type="start"></block>
+      <block type="delay">
+        <value name="wait">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="if"></block>
+      <block type="if_else"></block>
+      <block type="equals_return_boolean">
+        <field name="select-equal">equals</field>
+      </block>
+      <block type="not"></block>
+      <block type="and_or_return_boolean">
+        <field name="and_or">and</field>
+      </block>
+      <block type="true_false_return">
+        <field name="truefalse">true</field>
+      </block>
+      <block type="null"></block>
+    </category>
+    <category name="繰り返し" colour="#5ba55b">
+      <block type="repeat_infinity"></block>
+      <block type="repeat">
+        <value name="index">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="repeat_true">
+        <field name="boolean">true</field>
+      </block>
+      <block type="repeat_setting">
+        <field name="various" id="JKT,LXU/E+$@J0Ln4az5">i</field>
+        <value name="start">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="end">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="dutu">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="repeat_list">
+        <field name="various" id="JKT,LXU/E+$@J0Ln4az5">i</field>
+      </block>
+      <block type="break"></block>
+      <block type="continue"></block>
+    </category>
+    <category name="数学" colour="#5b67a5">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+      <block type="formula">
+        <field name="calc-type">plus</field>
+      </block>
+      <block type="math_etc1">
+        <field name="select">root</field>
+      </block>
+      <block type="math_etc2">
+        <field name="select">sin</field>
+      </block>
+      <block type="const_return">
+        <field name="NAME">pi</field>
+      </block>
+      <block type="hantei_boolean">
+        <field name="select">even</field>
+        <value name="NAME">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+      </block>
+      <block type="rewrite_input">
+        <field name="select">round</field>
+      </block>
+      <block type="list_search">
+        <field name="select">sum</field>
+      </block>
+      <block type="random">
+        <value name="start">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="end">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category name="テキスト" colour="#5ba58c">
+      <block type="string">
+        <field name="input">input</field>
+      </block>
+      <block type="print"></block>
+      <block type="string_renketu">
+        <value name="a">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+        <value name="b">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_length">
+        <value name="text">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_first_index">
+        <field name="option">first</field>
+        <value name="a">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+        <value name="NAME">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_input_char">
+        <field name="option">first</field>
+        <value name="text">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+        <value name="search-index">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_random_char">
+        <value name="text">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_input_string">
+        <value name="text">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+        <value name="startIndex">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="endIndex">
+          <block type="math_number">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_convert">
+        <field name="option">upper</field>
+        <value name="text">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_delete_space">
+        <field name="option">both</field>
+        <value name="text">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="string_prompt"></block>
+    </category>
+    <category name="リスト" colour="#745ba5">
+      <block type="list_create"></block>
+      <block type="list_push">
+        <value name="value">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="list_delete"></block>
+      <block type="list_all_delete"></block>
+      <block type="list_insert">
+        <value name="index">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="data">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="list_replace">
+        <value name="index">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="value">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="list_index">
+        <value name="index">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="list_str_index">
+        <field name="select">first</field>
+        <value name="value">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+      <block type="list_length"></block>
+      <block type="list_boolean_insert">
+        <value name="value">
+          <block type="string">
+            <field name="input">input</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category name="色" colour="#a5745b">
+      <block type="color_selector">
+        <field name="select">#ff0000</field>
+      </block>
+      <block type="color_random"></block>
+      <block type="color_option">
+        <value name="red">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="green">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="blue">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <sep></sep>
+    <category name="変数" colour="#a55b80" custom="VARIABLE"></category>
+    <category name="関数" colour="#995ba5" custom="PROCEDURE"></category>
+  </xml>
+</html>
