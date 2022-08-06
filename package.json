@@ -10,12 +10,12 @@
   },
   "devDependencies": {
     "acorn": "^8.8.0",
-    "blockly": "^8.0.3",
+    "blockly": "^5.20210325.0",
     "normalize.css": "^8.0.1",
     "vite": "^3.0.0"
   },
   "dependencies": {
-    "@blockly/theme-dark": "^3.0.14",
+    "@blockly/theme-dark": "^2.0.7",
     "highlight.js": "^11.6.0",
     "jquery": "^3.6.0",
     "toastr": "^2.1.4"
