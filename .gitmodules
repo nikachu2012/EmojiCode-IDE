@@ -2,3 +2,5 @@
 	path = emojicode
 	url = https://github.com/nikachu2012/emojicode.git
 [submodule "EmojiCode-sprite"]
+	path = EmojiCode-sprite
+	url = https://github.com/nikachu2012/EmojiCode-sprite.git
