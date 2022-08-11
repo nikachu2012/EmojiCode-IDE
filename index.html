@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="src/head.css" />
   <link rel="stylesheet" href="src/canvas.css" />
   <link rel="stylesheet" href="src/console.css" />
+  <link rel="stylesheet" href="src/modal.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
-  
+
   <script src="node_modules/acorn/dist/acorn.js"></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <link rel="stylesheet" href="./node_modules/toastr/build/toastr.min.css">
@@ -126,7 +127,22 @@
           </div>
         </div>
         <div class="tab-body">
-          b
+          <button class="create" onclick="displayModal('modal1')"><img
+              src="https://img.icons8.com/color/48/000000/plus-math.png"
+              style="display: inline-block; vertical-align: top; width: 18px;" />スプライトの作成</button>
+          <div class="sprite-body" id="list">
+
+
+
+            <div class="sprite-list-icon">
+              <img src="https://portfolio.nikachu.net/assets/nikachu-full.webp" class="icon">
+              <div class="id" title="nikachu"><span class="text">nikaaaaaaaaaaaaaaaaaaaaaaaaa</span></div>
+              <button class="material-symbols-outlined close-button">close</button>
+            </div>
+
+          </div>
+
+
         </div>
         <div class="tab-body">
           c
@@ -138,19 +154,59 @@
 
   <div class="bottom">
     <div class="left_to">
-      EmojiCode beta2
-      <!-- <div class="button">GG</div> -->
+      <span class="text">EmojiCode beta2</span>
+      <div class="button">GG</div>
     </div>
-    <div class="right_to">Created&nbsp;by&nbsp;<a href="https://github.com/nikachu2012">nikachu2012</a></div>
+
+    <div class="right_to">
+      <span class="text">
+        Created&nbsp;by&nbsp;<a href="https://github.com/nikachu2012">nikachu2012</a>
+      </span>
+
+    </div>
   </div>
+
+
+  <div class="modal modal1">
+    <!-- スプライト作成モーダル -->
+    <div class="modal-window 1">
+      <div class="modal-windowTitle">
+        <div class="title">スプライト作成</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        <div class="upload" id="uploadArea">
+          <input type="file" id="fileUpload" accept="image/jpeg,image/png" onchange="fileNameUpdate();">
+        </div>
+        <input type="text" id="inputId" placeholder="IDを入力してください" class="inputID">
+        <button class="confirm" onclick="filebase64();">確定</button>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal2">
+    <div class="modal-window">
+
+      <div class="modal-contents">
+        <p>これはモーダルウインドウです2。</p>
+        <button onclick="closeModal();">Close Modal</button>
+      </div>
+    </div>
+  </div>
+
+
 
   <script src="console/index.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+  <script src="./EmojiCode-sprite/emojisprite.js"></script>
+  <script src="./control/sprite.js"></script>
+  <script src="./control/modal.js"></script>
 
   <script>
-    window.onload = function () {
+    /*window.onload = function () {
       // ブラウザ上に表示する文字列を保持する一時変数
       let outstr = "";
       // console.logの挙動
@@ -164,7 +220,7 @@
 
         log(outstr)
       }
-    }
+    }*/
   </script>
 </body>
 
