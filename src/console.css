@@ -9,7 +9,7 @@
   border-top-right-radius: 5px;
 
   background-color: #2C2C2C;
-  
+
 
   border-bottom: 1px solid #00FF00;
   color: white;
@@ -71,7 +71,7 @@
   height: calc(100vh - 505px);
 
   width: var(--selector);
-  
+
 }
 
 .selector li {
@@ -85,11 +85,11 @@
   font-size: 16px;
 }
 
-.runcode-body{
+.runcode-body {
   position: relative;
 }
 
-.runcode-body .logArea{
+.runcode-body .logArea {
   margin: 5px;
 }
 
@@ -97,11 +97,11 @@
   width: 18px;
   display: inline-block;
   vertical-align: top;
-  
+
   margin-right: 3px;
 }
 
-.selector li:hover{
+.selector li:hover {
   background-color: #616161;
 }
 
@@ -114,17 +114,17 @@
   scrollbar-width: none;
 }
 
-.runcode-body::-webkit-scrollbar{
+.runcode-body::-webkit-scrollbar {
   display: none;
 }
 
-.no-run{
+.no-run {
   position: absolute;
 
   left: 50%;
   top: 50%;
 
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 300px;
   height: 80px;
 
@@ -137,36 +137,36 @@
   padding: 5px;
   font-size: 20px;
 
-  
+
 }
 
-.no-run img{
+.no-run img {
   width: 18px;
   display: inline-block;
   vertical-align: top;
-  
+
   margin-right: 3px;
 
 }
 
 
-.status{
+.status {
   display: inline-block;
   vertical-align: top;
-  
+
 }
 
-.success{
+.success {
   color: rgb(60, 175, 60);
   user-select: none;
 }
 
-.error{
+.error {
   color: rgb(184, 43, 43);
   user-select: none;
 }
 
-.message{
+.message {
   margin-left: 10px;
   margin-top: 10px;
 }
@@ -177,12 +177,12 @@
   margin-top: 10px;
 }
 
-pre{
+pre {
   margin: 0%;
   padding: 0;
 
   white-space: pre-wrap;
-  word-break:break-all;
+  word-break: break-all;
 }
 
 .selector .selected {
