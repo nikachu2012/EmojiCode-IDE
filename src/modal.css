@@ -105,3 +105,47 @@
 
     cursor: pointer;
 }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+dt, dd {
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.accordion {
+    border-top: 1px solid #ccc;
+}
+.accordion dt {
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion dt::after {
+    position: absolute;
+    content: "\03e";
+    right: 15px;
+    transition: 0.2s;
+}
+.accordion dt.open::after {
+    transform: rotate(90deg);
+}
+
+.accordion dd {
+    visibility: hidden;
+    height: 0;
+    padding: 0 0;
+    transition: 0.2s;
+}
+.accordion dd.open {
+    visibility: visible;
+    height: auto;
+    padding:15px 0;
+}
+
+.pictureSetting{
+    margin-left: 15px;
+}
