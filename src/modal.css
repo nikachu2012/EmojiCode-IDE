@@ -86,7 +86,8 @@
     transform: translate(-50%,-50%);
 
     word-break: keep-all;
-
+    white-space: pre;
+    
     content: 'クリックまたはドラッグで\Aファイルをアップロードできます';
 }
 
@@ -148,4 +149,8 @@ dt, dd {
 
 .pictureSetting{
     margin-left: 15px;
+}
+
+.pictureSetting .imgSize{
+    width: 200px;
 }

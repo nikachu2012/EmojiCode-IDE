@@ -92,8 +92,8 @@ const fileUpdate = () => {
                 pictureSetting.innerHTML = `
                 <input type="checkbox" name="size" id="size" onchange="connecttext('pictureWidth', 'pictureHeight', this.checked)">
                 <label for="size">サイズを変更する</label>
-                <input type="number" id="pictureWidth" placeholder="横幅" value="${img.naturalWidth}" disabled="disabled">px<br>
-                <input type="number" id="pictureHeight" placeholder="縦幅" value="${img.naturalHeight}" disabled="disabled">px<br>
+                <input type="number" class="imgSize" id="pictureWidth" placeholder="横幅" value="${img.naturalWidth}" disabled="disabled">px<br>
+                <input type="number" class="imgSize" id="pictureHeight" placeholder="縦幅" value="${img.naturalHeight}" disabled="disabled">px<br>
                 <div>0を入力すると自動計算します。</div>
                 `
             }
