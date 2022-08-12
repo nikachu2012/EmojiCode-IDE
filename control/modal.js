@@ -71,7 +71,7 @@ const filebase64 = () => {
 }
 
 
-const fileNameUpdate = () => {
+const fileUpdate = () => {
     const upload = document.getElementById('fileUpload').files[0]
     const pictureSetting = document.getElementById('pictureSetting')
     
