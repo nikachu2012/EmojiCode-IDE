@@ -53,13 +53,13 @@ const filebase64 = () => {
 
 
             }
-            if(file){
+            if (file) {
                 reader.readAsDataURL(file)
             }
-            else{
+            else {
                 alert('ファイルをアップロードしてください')
             }
-            
+
         }
 
 
@@ -77,7 +77,7 @@ const fileNameUpdate = () => {
     if(upload !== undefined){
         document.getElementById('uploadArea').className += ' selected'
     }
-    else{
+    else {
         document.getElementById('uploadArea').className = document.getElementById('uploadArea').className.replace(' selected', '')
     }
     
