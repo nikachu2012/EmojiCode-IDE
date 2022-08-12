@@ -46,7 +46,7 @@ const filebase64 = () => {
                         rotateType: "free",
                     }
 
-                    alert(option)
+                    console.log(option)
                     emojisp.createSprite(option)
                 }
 
