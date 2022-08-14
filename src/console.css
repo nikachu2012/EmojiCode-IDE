@@ -192,7 +192,7 @@ pre {
 .sprite-body {
   position: relative;
 
-  width: 410px;
+  width: 480px;
   height: calc(100vh - 505px);
   overflow-y: scroll;
 
@@ -237,14 +237,28 @@ pre {
   position: relative;
 }
 
-.sprite-list-icon .icon {
+.sprite-list-icon .image-base{
   width: 90px;
   height: 90px;
+  
+  display: flex;
+  
+  align-items: center;
+
+  background-color: #ffffff;
 
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 
   pointer-events: none;
+
+  border-bottom: #F5F5F5 solid 1px;
+}
+
+.image-base .icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
 }
 
 .sprite-list-icon .id {
