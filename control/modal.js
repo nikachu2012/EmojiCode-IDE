@@ -49,7 +49,7 @@ const filebase64 = () => {
 
                     console.log(option)
                     emojisp.createSprite(option)
-                    emojisp.spriteListWrite();
+                    spriteListWrite();
                     closeModal();
                     pictureSetting.innerHTML = `画像を選択すると表示されます。`
                     uploadImage.value = '';
@@ -69,7 +69,7 @@ const filebase64 = () => {
 
 
     } catch (error) {
-        alert('EmojiCode Sprite Controller Error detect!\nPlease see DevTools.')
+        alert('EmojiCode IDE Error detect!\nPlease see DevTools.')
         console.log(error)
     }
 
