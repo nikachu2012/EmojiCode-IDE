@@ -19,12 +19,13 @@ const loadImage = (src) => {
 const filebase64 = () => {
     try {
         const uploadImage = document.querySelector('#fileUpload')
-        const InputID = document.getElementById('inputId').value
+        const InputID = document.getElementById('inputId')
         const file = uploadImage.files[0]
+        const pictureSetting = document.getElementById('pictureSetting')
 
         const reader = new FileReader()
 
-        if (InputID == '') {
+        if (InputID.value == '') {
             alert('idが入力されていません。')
         }
         else {
@@ -37,7 +38,7 @@ const filebase64 = () => {
                 img.onload = () => {
                     var option = {
                         url: base64Text,
-                        id: InputID,
+                        id: InputID.value,
                         width: img.naturalWidth,
                         height: img.naturalHeight,
                         x: 0,
@@ -48,10 +49,13 @@ const filebase64 = () => {
 
                     console.log(option)
                     emojisp.createSprite(option)
+                    closeModal();
+                    pictureSetting.innerHTML = `画像を選択すると表示されます。`
+                    uploadImage.value = '';
+                    document.getElementById('uploadArea').className = document.getElementById('uploadArea').className.replace(' selected', '')
+                    InputID.value = '';
+                    pictureSetting.className = pictureSetting.className.replace(' open', '')
                 }
-
-
-
             }
             if (file) {
                 reader.readAsDataURL(file)
