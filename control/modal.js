@@ -49,6 +49,7 @@ const filebase64 = () => {
 
                     console.log(option)
                     emojisp.createSprite(option)
+                    emojisp.spriteListWrite();
                     closeModal();
                     pictureSetting.innerHTML = `画像を選択すると表示されます。`
                     uploadImage.value = '';
