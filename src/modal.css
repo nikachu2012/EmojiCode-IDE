@@ -71,6 +71,10 @@
     
 }
 
+.modal-contents .sizeChange_input {
+    width: 245px;
+}
+
 .upload{
     overflow: hidden;
 }

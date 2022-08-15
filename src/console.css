@@ -237,12 +237,12 @@ pre {
   position: relative;
 }
 
-.sprite-list-icon .image-base{
+.sprite-list-icon .image-base {
   width: 90px;
   height: 90px;
-  
+
   display: flex;
-  
+
   align-items: center;
 
   background-color: #ffffff;
@@ -298,10 +298,26 @@ pre {
   border-radius: 50%;
 }
 
+.sprite-list-icon .edit-button {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  font-size: 12px;
+  padding-top: 1px;
+  right: 3px;
+  top: 24px;
+
+  background-color: #01d5ff;
+  border-radius: 50%;
+}
+
 .modal-contents .inputID {
   margin-top: 7px;
   width: 270px;
 }
+
 .modal-contents .confirm {
   background-color: transparent;
   border: none;

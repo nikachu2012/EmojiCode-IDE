@@ -39,8 +39,8 @@ const filebase64 = () => {
                     var option = {
                         url: base64Text,
                         id: InputID.value,
-                        width: img.naturalWidth,
-                        height: img.naturalHeight,
+                        width: parseInt(document.getElementById('pictureWidth').value),
+                        height: parseInt(document.getElementById('pictureHeight').value),
                         x: 0,
                         y: 0,
                         deg: 0,
@@ -95,8 +95,9 @@ const fileUpdate = () => {
 
             img.onload = () => {
                 pictureSetting.innerHTML = `
-                <input type="checkbox" name="size" id="size" onchange="connecttext('pictureWidth', 'pictureHeight', this.checked)">
+                <input type="checkbox" name="size" id="size" onchange="connecttext('pictureWidth', 'pictureHeight','canvasSize', this.checked)">
                 <label for="size">サイズを変更する</label>
+                <button id="canvasSize" disabled="disabled" onclick="sizeCanvas(${img.naturalWidth}, ${img.naturalHeight},'pictureWidth', 'pictureHeight')">キャンバスサイズに合わせる</button>
                 <input type="number" class="imgSize" id="pictureWidth" placeholder="横幅" value="${img.naturalWidth}" disabled="disabled">px<br>
                 <input type="number" class="imgSize" id="pictureHeight" placeholder="縦幅" value="${img.naturalHeight}" disabled="disabled">px<br>
                 <div>0を入力すると自動計算します。</div>
@@ -124,15 +125,31 @@ dt_tags.forEach(dt => {
 });
 
 
-function connecttext(textid, textid2, ischecked) {
+function connecttext(textid, textid2, button, ischecked) {
     if (ischecked == true) {
         // チェックが入っていたら有効化
         document.getElementById(textid).disabled = false;
         document.getElementById(textid2).disabled = false;
+        document.getElementById(button).disabled = false;
     }
     else {
         // チェックが入っていなかったら無効化
         document.getElementById(textid).disabled = true;
         document.getElementById(textid2).disabled = true;
+        document.getElementById(button).disabled = true;
+    }
+}
+
+function sizeCanvas(width, height, textid, textid2) {
+    const widthArea = document.getElementById(textid)
+    const heightArea = document.getElementById(textid2)
+
+    if(height > width){
+        widthArea.value = 0
+        heightArea.value = HEIGHT;
+    }
+    else if  (width > height){
+        widthArea.value = WIDTH;
+        heightArea.value = 0;
     }
 }

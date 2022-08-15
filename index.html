@@ -187,11 +187,17 @@
   </div>
 
   <div class="modal modal2">
-    <div class="modal-window">
-
+    <div class="modal-window 2">
+      <div class="modal-windowTitle">
+        <div class="title">スプライトサイズ変更</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
       <div class="modal-contents">
-        <p>これはモーダルウインドウです2。</p>
-        <button onclick="closeModal();">Close Modal</button>
+        <button id="sizeChange_button">キャンパスサイズに合わせる</button>
+        <input id="sizeChange_width" type="number" placeholder="横幅" class="sizeChange_input">&nbsp;px
+        <input id="sizeChange_height" type="number" placeholder="縦幅" class="sizeChange_input">&nbsp;px
+        <button class="confirm" id="sizeChange_confirm">確定</button>
+
       </div>
     </div>
   </div>
