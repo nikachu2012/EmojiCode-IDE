@@ -48,6 +48,9 @@
   width: calc(500px - 20px);
   height: calc(100vh - 505px);
 
+  min-height: 300px;
+  margin-bottom: 8px;
+
   margin-left: 10px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;

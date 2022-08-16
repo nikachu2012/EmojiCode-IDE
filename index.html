@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="src/canvas.css" />
   <link rel="stylesheet" href="src/console.css" />
   <link rel="stylesheet" href="src/modal.css">
+  <link rel="stylesheet" href="src/viewButton.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
@@ -36,22 +37,22 @@
 <body>
   <div class="head">
     <span class="text">EmojiScript</span>
-    <button id="file">ファイル</button><button id="edit">編集</button><button id="help">デバッグ</button><button
-      id="help">ヘルプ</button>
+    <button id="headButton_run" class="material-symbols-outlined" style="font-size: 18px;color: #4cbf56;">flag</button>
+    <button id="headButton_circle" class="material-symbols-outlined hbstop"
+      style="font-size: 18px; color: #ec5959;">circle</button>
+    <button id="help">ヘルプ</button>
   </div>
 
   <div class="body">
-    <div class="code" id="code"></div>
-    <div class="run">
+    <div class="code" id="code" style="width: calc(100vw - 500px)"></div>
+    <div class="run" id="run">
       <div class="button-body">
         <div class="left">
-          <button class="material-symbols-outlined flag" id="flag">flag</button>
-          <button class="material-symbols-outlined circle">circle</button>
+          <button class="material-symbols-outlined flag" id="flag" title="実行">flag</button>
+          <button class="material-symbols-outlined circle" title="停止">circle</button>
         </div>
         <div class="right">
-          <button class="material-symbols-outlined plus">zoom_in</button>
-          <button class="material-symbols-outlined minus">zoom_out</button>
-          <button class="material-symbols-outlined fullscreen">fullscreen</button>
+          <button class="material-symbols-outlined fullscreen" id="close" title="右側を閉じる">close</button>
         </div>
       </div>
       <div class="run-canvas" id="run-canvas"></div>
@@ -202,7 +203,9 @@
     </div>
   </div>
 
-
+  <div class="viewButton" id="viewButton" style="visibility: hidden;">
+    <span class="material-symbols-outlined icon">chevron_right</span>
+  </div>
 
   <script src="console/index.js"></script>
 
@@ -228,6 +231,18 @@
         log(outstr)
       }
     }*/
+
+    (function () {
+      if (window.matchMedia && window.matchMedia('(max-device-width: 1000px)').matches) {
+        document.getElementById('run').style.visibility = 'hidden';
+        document.getElementById('run').style.width = '0px'
+
+        document.getElementById('code').style.width = '100vw'
+        document.getElementById('viewButton').style.visibility = 'visible'
+      } else {
+        return false;
+      }
+    })();
   </script>
 </body>
 

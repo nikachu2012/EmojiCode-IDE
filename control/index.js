@@ -24,7 +24,7 @@ const pushFlag = () => {
             toastr.success('コードの実行が完了しました。');
         } catch (error) {
             document.getElementById('error').innerHTML =
-            `<div class="error material-symbols-outlined" style="font-size: 40pt;">close</div>
+                `<div class="error material-symbols-outlined" style="font-size: 40pt;">close</div>
             <span class="text">エラーが発見されました。</span>
             <div class="message">
               ${error}
@@ -46,4 +46,24 @@ const pushFlag = () => {
 
 document.getElementById('flag').addEventListener('click', () => {
     pushFlag();
+})
+
+document.getElementById('headButton_run').addEventListener('click', () => {
+    pushFlag();
+})
+
+document.getElementById('close').addEventListener('click', () => {
+    document.getElementById('run').style.visibility = 'hidden';
+    document.getElementById('run').style.width = '0px'
+
+    document.getElementById('code').style.width = '100vw'
+    document.getElementById('viewButton').style.visibility = `visible`
+})
+
+document.getElementById('viewButton').addEventListener('click', () => {
+    document.getElementById('run').style.visibility = 'visible';
+    document.getElementById('run').style.width = '500px'
+
+    document.getElementById('code').style.width = 'calc(100vw - 500px)'
+    document.getElementById('viewButton').style.visibility = 'hidden'
 })

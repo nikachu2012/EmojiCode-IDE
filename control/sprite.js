@@ -48,7 +48,7 @@ spriteDelList = (id) => {
                 return null
             }
         }
-        else{}
+        else { }
 
 
     } catch (error) {
@@ -64,7 +64,7 @@ openSpriteEdit = (id) => {
         closeSpriteChange(`${id}`)
     });
     document.getElementById('sizeChange_button').addEventListener('click', () => {
-        sizeCanvas(emojisp.accessSpriteData(id).width, emojisp.accessSpriteData(id).height,'sizeChange_width', 'sizeChange_height')
+        sizeCanvas(emojisp.accessSpriteData(id).width, emojisp.accessSpriteData(id).height, 'sizeChange_width', 'sizeChange_height')
     });
     document.getElementById('sizeChange_width').value = emojisp.accessSpriteData(id).width;
     document.getElementById('sizeChange_height').value = emojisp.accessSpriteData(id).height;

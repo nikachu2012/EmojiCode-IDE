@@ -28,6 +28,7 @@ Promise.all(
         theme: DarkTheme,
         toolbox: document.getElementById("toolbox"),
         collapse: true,
+        renderer: 'thrasos',
         comments: true,
         disable: true,
         maxBlocks: Infinity,
@@ -58,7 +59,21 @@ Promise.all(
 
     Blockly.setLocale(Ja)
     var workspace = Blockly.inject('code', options);
+
+    const code = document.getElementById('code')
+
+    const observer = new MutationObserver(records => {
+        // 変化が発生したときの処理を記述
+        Blockly.svgResize(workspace);
+    })
+
+    observer.observe(code, {
+        attributes: true,
+        attributeFilter: ['style']
+    })
 });
 
 Blockly.HSV_SATURATION = 0.45;
 Blockly.HSV_VALUE = 0.65;
+
+
