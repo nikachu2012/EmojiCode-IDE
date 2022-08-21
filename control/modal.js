@@ -45,6 +45,8 @@ const filebase64 = () => {
                         y: 0,
                         deg: 0,
                         rotateType: "free",
+                        hanten: false,
+                        rebound: false,
                     }
 
                     console.log(option)
