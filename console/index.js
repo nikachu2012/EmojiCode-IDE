@@ -10,4 +10,4 @@ const log = (text) => {
   logArea.appendChild(new_element);
 };
 
-const runCode = (code) => Function(code)()
+const runCode = (code) => eval(code);
