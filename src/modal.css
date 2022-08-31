@@ -75,6 +75,10 @@
     width: 245px;
 }
 
+.modal-contents .addSound_input {
+    width: 270px;
+}
+
 .upload{
     overflow: hidden;
 }

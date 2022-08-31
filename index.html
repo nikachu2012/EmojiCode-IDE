@@ -138,7 +138,12 @@
 
         </div>
         <div class="tab-body">
-          c
+          <button class="create" onclick="displayModal('modal3')"><img
+            src="https://img.icons8.com/color/48/000000/plus-math.png"
+            style="display: inline-block; vertical-align: top; width: 18px;" />音声の追加</button>
+            <div class="sprite-body" id="soundList">
+              <div class="no-run">画像がありません</div>
+            </div>
         </div>
       </div>
 
@@ -171,7 +176,7 @@
         <div class="upload" id="uploadArea">
           <input type="file" id="fileUpload" accept="image/jpeg,image/png" onchange="fileUpdate();">
         </div>
-        <input type="text" id="inputId" placeholder="IDを入力してください" class="inputID">
+        <input type="text" id="inputId" placeholder="IDを入力" class="inputID">
 
         <div class="container">
           <dl class="accordion">
@@ -203,6 +208,20 @@
     </div>
   </div>
 
+  <div class="modal modal3">
+    <div class="modal-window 3">
+      <div class="modal-windowTitle">
+        <div class="title">音声の追加</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        <input id="addSound_input" type="url" placeholder="音声がアップロードされたURL" class="addSound_input">
+        <input id="addSound_inputID" type="url" placeholder="IDを入力" class="addSound_input">
+        <button class="confirm" id="addSound_confirm">確定</button>
+      </div>
+    </div>
+  </div>
+
   <div class="viewButton" id="viewButton" style="visibility: hidden;">
     <span class="material-symbols-outlined icon">chevron_right</span>
   </div>
@@ -211,9 +230,11 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js" integrity="sha512-59wz3/QJMP1QgULLB5O08pqS8wIdlvK1iJaRZm6ESyRrUuxjdRrnKepXKbSTbjX3ZZZ19AbiCJZEaZN7Zm8OjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./EmojiCode-sprite/emojisprite.js"></script>
   <script src="./EmojiCode-audio/emojiaudio.js"></script>
   <script src="./control/sprite.js"></script>
+  <script src="./control/sound.js"></script>
   <script src="./control/modal.js"></script>
 
   <script>
