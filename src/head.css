@@ -7,19 +7,23 @@
   user-select: none;
   border-bottom: #00ff00 1px solid;
   display: flex;
+
+  z-index: 105;
 }
 
 .head .text {
   margin: 3px;
   margin-right: 0px;
   padding: 3px;
-  padding-left: 6px;
+  padding-left: 1px;
   padding-right: 6px;
 
   color: white;
   border-radius: 3px;
 }
-
+.head img {
+  margin-left: 6px;
+}
 .head button {
   background-color: transparent;
   border: none;
