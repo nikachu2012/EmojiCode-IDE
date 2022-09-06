@@ -81,8 +81,8 @@ const filebase64 = () => {
 const fileUpdate = () => {
     const upload = document.getElementById('fileUpload').files[0]
     const pictureSetting = document.getElementById('pictureSetting')
-    
-    
+
+
     const uploadImage = document.querySelector('#fileUpload')
     const file = uploadImage.files[0]
     if (upload !== undefined) {
@@ -105,7 +105,7 @@ const fileUpdate = () => {
                 <div>0を入力すると自動計算します。</div>
                 `
             }
-           
+
         }
         if (file) {
             reader.readAsDataURL(file)
@@ -146,11 +146,11 @@ function sizeCanvas(width, height, textid, textid2) {
     const widthArea = document.getElementById(textid)
     const heightArea = document.getElementById(textid2)
 
-    if(height > width){
+    if (height > width) {
         widthArea.value = 0
         heightArea.value = HEIGHT;
     }
-    else if  (width > height){
+    else if (width > height) {
         widthArea.value = WIDTH;
         heightArea.value = 0;
     }
