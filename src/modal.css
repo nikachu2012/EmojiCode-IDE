@@ -68,7 +68,7 @@
 
     position: relative;
 
-    
+
 }
 
 .modal-contents .sizeChange_input {
@@ -79,7 +79,25 @@
     width: 270px;
 }
 
-.upload{
+.modal-contents .fileList {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+
+    padding: 2px;
+
+    width: 100%;
+    text-align: left;
+}
+
+.fileList:hover {
+    background-color: gray;
+}
+
+.upload {
     overflow: hidden;
 }
 
@@ -91,19 +109,31 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
     word-break: keep-all;
     white-space: pre;
-    
+
     content: 'クリックまたはドラッグで\Aファイルをアップロードできます';
 }
 
-.modal-contents .selected{
+.modal-contents .selected {
     background-color: #19d256;
 }
 
-#fileUpload{
+#fileUpload {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 270px;
+    height: 100px;
+
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+#saveFileLoad {
     position: absolute;
     left: 0;
     top: 0;
@@ -119,7 +149,9 @@
     max-width: 800px;
     margin: 0 auto;
 }
-dt, dd {
+
+dt,
+dd {
     padding: 15px;
     margin: 0;
     border-bottom: 1px solid #ccc;
@@ -128,6 +160,7 @@ dt, dd {
 .accordion {
     border-top: 1px solid #ccc;
 }
+
 .accordion dt {
     position: relative;
     cursor: pointer;
@@ -139,6 +172,7 @@ dt, dd {
     right: 15px;
     transition: 0.2s;
 }
+
 .accordion dt.open::after {
     transform: rotate(90deg);
 }
@@ -149,16 +183,17 @@ dt, dd {
     padding: 0 0;
     transition: 0.2s;
 }
+
 .accordion dd.open {
     visibility: visible;
     height: auto;
-    padding:15px 0;
+    padding: 15px 0;
 }
 
-.pictureSetting{
+.pictureSetting {
     margin-left: 15px;
 }
 
-.pictureSetting .imgSize{
+.pictureSetting .imgSize {
     width: 200px;
 }

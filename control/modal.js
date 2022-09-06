@@ -118,6 +118,14 @@ const fileUpdate = () => {
 
 }
 
+const saveLoadUpdate = () => {
+    const upload = document.getElementById('saveFileLoad').files[0]
+
+    if (upload !== undefined) {
+        document.getElementById('saveFileArea').className += ' selected'
+    }
+}
+
 const dt_tags = document.querySelectorAll('.accordion dt');
 dt_tags.forEach(dt => {
     dt.addEventListener('click', () => {
