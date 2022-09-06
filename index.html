@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="src/modal.css">
   <link rel="stylesheet" href="src/viewButton.css">
   <link rel="stylesheet" href="src/menu.css">
+  <link rel="stylesheet" href="src/debug.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
@@ -156,8 +157,8 @@
 
   <div class="bottom">
     <div class="left_to">
-      <span class="text">EmojiCode beta2</span>
-      <div class="button">GG</div>
+      <span class="text">EmojiCode&nbsp;<span id="ec_version"></span></span>
+      <div class="button">Contact</div>
     </div>
 
     <div class="right_to">
@@ -247,6 +248,58 @@
     </div>
   </div>
 
+  <div class="modal modal4">
+    <div class="modal-window 4">
+      <div class="modal-windowTitle">
+        <div class="title">バージョン情報</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        <span style="font-size:xx-large;">EmojiCode</span><br>
+        Created by <a href="https://github.com/nikachu2012" target="_blank">nikachu2012</a><br>
+
+        <table>
+          <tbody>
+            <tr>
+              <td>バージョン</td>
+              <td id="ec_version"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal5">
+    <div class="modal-window 5">
+      <div class="modal-windowTitle">
+        <div class="title">クイックロード</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        読み込むファイルを選択してください<br>
+        <hr>
+        <div id="listBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal6">
+    <!-- スプライト作成モーダル -->
+    <div class="modal-window 6">
+      <div class="modal-windowTitle">
+        <div class="title">ファイル読み込み</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        <div class="upload" id="saveFileArea">
+          <input type="file" id="saveFileLoad" onchange="saveLoadUpdate();">
+        </div>
+        <button class="confirm" id="saveFileConfirm">確定</button>
+      </div>
+    </div>
+  </div>
+
   <div class="viewButton" id="viewButton" style="visibility: hidden;">
     <span class="material-symbols-outlined icon">chevron_right</span>
   </div>
@@ -261,12 +314,14 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js" integrity="sha512-59wz3/QJMP1QgULLB5O08pqS8wIdlvK1iJaRZm6ESyRrUuxjdRrnKepXKbSTbjX3ZZZ19AbiCJZEaZN7Zm8OjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
   <script src="./EmojiCode-sprite/emojisprite.js"></script>
   <script src="./EmojiCode-audio/emojiaudio.js"></script>
   <script src="./control/sprite.js"></script>
   <script src="./control/sound.js"></script>
   <script src="./control/modal.js"></script>
+  <script src="./control/save.js"></script>
+  <script src="./control/debugmenu.js"></script>
 
   <script>
     /*window.onload = function () {
@@ -296,6 +351,9 @@
         return false;
       }
     })();
+    document.querySelectorAll('#ec_version').forEach((e) => {
+      e.innerHTML = 'v1.0beta'
+    })
   </script>
 </body>
 
