@@ -1,0 +1,32 @@
+.debug_body{
+    width: 250px;
+    height: auto;
+
+    position: absolute;
+    left: 20px;
+    top: 20px;
+
+    z-index: 120;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid white;
+
+    padding: 4px;
+
+    cursor: default;
+
+    visibility: hidden;
+}
+
+.debug_body .titlebar{
+    cursor: move;
+}
+
+.debug_body .hr {
+    border-bottom: 1px solid gray;
+    margin: 5px 0;
+}
+
+.drag{
+    z-index: 121;
+}
