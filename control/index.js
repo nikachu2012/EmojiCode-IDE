@@ -1,5 +1,3 @@
-import Blockly from "blockly";
-
 const pushFlag = () => {
     const code = Blockly.JavaScript.workspaceToCode();
 
@@ -43,14 +41,6 @@ const pushFlag = () => {
     }
 };
 
-
-document.getElementById('flag').addEventListener('click', () => {
-    pushFlag();
-})
-
-document.getElementById('headButton_run').addEventListener('click', () => {
-    pushFlag();
-})
 
 document.getElementById('close').addEventListener('click', () => {
     document.getElementById('run').style.visibility = 'hidden';

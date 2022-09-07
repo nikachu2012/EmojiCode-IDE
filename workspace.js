@@ -1,16 +1,3 @@
-import Blockly, { Block } from 'blockly';
-import DarkTheme from '@blockly/theme-dark';
-
-import 'blockly/blocks';
-import 'blockly/javascript'; // Or the generator of your choice
-import Ja from 'blockly/msg/ja'
-
-import './emojicode/emojicode_def'
-import './emojicode/emojicode_stub'
-
-import * as localforage from 'localforage';
-import FileSaver from 'file-saver';
-
 
 Promise.all(
     ["./emojicode/build/workspace.xml", "./emojicode/build/toolbox.xml"].map(async file => {
@@ -29,7 +16,7 @@ Promise.all(
 
 }).then(() => {
     var options = {
-        theme: DarkTheme,
+        theme: 'darkmode',
         toolbox: document.getElementById("toolbox"),
         collapse: true,
         renderer: 'thrasos',
@@ -61,7 +48,6 @@ Promise.all(
         },
     };
 
-    Blockly.setLocale(Ja)
     var workspace = Blockly.inject('code', options);
 
     const code = document.getElementById('code')

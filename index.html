@@ -19,20 +19,6 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 
 
-  <script src="node_modules/acorn/dist/acorn.js"></script>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="./node_modules/toastr/build/toastr.min.css">
-  <script src="./node_modules/toastr/build/toastr.min.js"></script>
-
-  <script src="jquery.tab/index.js"></script>
-
-  <script src="emojicode/defaultFunctions/index.js"></script>
-  <script src="control/index.js" type="module"></script>
-  <script src="tab/index.js"></script>
-
-  <script src="workspace.js" type="module" defer></script>
-
-
   <link rel="stylesheet" href="src/workspace-color.css">
 </head>
 
@@ -42,7 +28,7 @@
     <span class="text">EmojiScript</span>
     <button id="file">ファイル</button>
     <button id="help">ヘルプ</button>
-    <button id="headButton_run" class="material-symbols-outlined" style="font-size: 18px;color: #4cbf56;">flag</button>
+    <button id="headButton_run" class="material-symbols-outlined" style="font-size: 18px;color: #4cbf56;" onclick="pushFlag()">flag</button>
     <button id="headButton_circle" class="material-symbols-outlined hbstop"
       style="font-size: 18px; color: #ec5959;">circle</button>
 
@@ -53,7 +39,7 @@
     <div class="run" id="run">
       <div class="button-body">
         <div class="left">
-          <button class="material-symbols-outlined flag" id="flag" title="実行">flag</button>
+          <button class="material-symbols-outlined flag" id="flag" title="実行" onclick="pushFlag();">flag</button>
           <button class="material-symbols-outlined circle" title="停止">circle</button>
         </div>
         <div class="right">
@@ -312,9 +298,35 @@
 
   <script src="console/index.js"></script>
 
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/msg/ja.js"></script>
+  <script src="darkmode/index.js"></script>
+
+  <script src="node_modules/localforage/dist/localforage.min.js"></script>
+
+  <script src="node_modules/acorn/dist/acorn.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="./node_modules/toastr/build/toastr.min.css">
+  <script src="./node_modules/toastr/build/toastr.min.js"></script>
+
+  <script src="jquery.tab/index.js"></script>
+
+  <script src="./emojicode/emojicode_def.js"></script>
+  <script src="./emojicode/emojicode_stub.js"></script>
+
+  <script src="emojicode/defaultFunctions/index.js"></script>
+  <script src="control/index.js"></script>
+  <script src="tab/index.js"></script>
+
+  <script src="workspace.js" defer></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
+  
   <script src="./EmojiCode-sprite/emojisprite.js"></script>
   <script src="./EmojiCode-audio/emojiaudio.js"></script>
   <script src="./control/sprite.js"></script>
