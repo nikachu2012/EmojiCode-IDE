@@ -171,7 +171,7 @@
   <div class="menu menu_help" onclick="buttonHelp();">
     <div class="menu-pulldown menu-pulldown-help">
       <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net', '_blank');">ドキュメント</div>
-      <div class="content">お問い合わせ</div>
+      <div class="content" onclick="displayModal('modal7')">お問い合わせ</div>
       <hr>
       <div class="content" onclick="displayModal('modal4')">バージョン情報</div>
     </div>
@@ -282,6 +282,19 @@
           <input type="file" id="saveFileLoad" onchange="saveLoadUpdate();">
         </div>
         <button class="confirm" id="saveFileConfirm">確定</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal7">
+    <!-- スプライト作成モーダル -->
+    <div class="modal-window 7">
+      <div class="modal-windowTitle">
+        <div class="title">Contact</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        お問い合わせがある場合は<a href="mailto:contact@nikachugroup.com">contact@nikachugroup.com</a>または<a href="https://twitter.com/nikachu2012">ニカチュウのDM</a>までどうぞ。
       </div>
     </div>
   </div>
