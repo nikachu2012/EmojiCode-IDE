@@ -349,22 +349,6 @@
   <script src="./control/debugmenu.js"></script>
 
   <script>
-    /*window.onload = function () {
-      // ブラウザ上に表示する文字列を保持する一時変数
-      let outstr = "";
-      // console.logの挙動
-      console.log = (...args) => {
-        for (let arg of args) {
-          // console.logに入力された文字列を改行つきで保持
-          outstr = arg + "<br>";
-        }
-        // HTMLのid="console"に対して文字列outstrを設定する
-        //document.getElementById("console").innerHTML = outstr;
-
-        log(outstr)
-      }
-    }*/
-
     (function () {
       if (window.matchMedia && window.matchMedia('(max-device-width: 1000px)').matches) {
         document.getElementById('run').style.visibility = 'hidden';
