@@ -365,6 +365,11 @@
     document.querySelectorAll('#ec_version').forEach((e) => {
       e.innerHTML = 'v1.0'
     })
+
+    window.addEventListener('beforeunload', function (e) {
+      e.preventDefault();
+      e.returnValue = 'ファイルは保存しましたか？保存していない場合、ページを移動するとデータが消える可能性があります！';
+    });
   </script>
 </body>
 
