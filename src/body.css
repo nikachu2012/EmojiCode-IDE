@@ -16,7 +16,7 @@
   width: 500px;
   height: auto;
 
-  overflow: hidden;
+  overflow: scroll;
   background-color: #212121;
 
   scrollbar-width: none;
