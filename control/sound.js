@@ -24,6 +24,7 @@ const soundDelList = (id) => {
     const key = Object.keys(emojiau.soundData)
     if (key.includes(id)) {
         delete emojiau.soundData[id];
+        delete emojiau.soundDetail[id];
     }
     else{
         alert(`指定されたID(${id})が追加されていません`)
