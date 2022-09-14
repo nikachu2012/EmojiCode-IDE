@@ -33,7 +33,7 @@ const soundDelList = (id) => {
 }
 
 document.getElementById('addSound_confirm').addEventListener('click', () => {
-    if (document.getElementById('addSound_inputID').value !== "" || document.getElementById('addSound_input').value !== "") {
+    if (document.getElementById('addSound_inputID').value !== "" && document.getElementById('addSound_input').value !== "") {
         if (!Object.keys(emojiau.soundData).includes(document.getElementById('addSound_inputID').value)) {
             emojiau.createSound(document.getElementById('addSound_inputID').value, document.getElementById('addSound_input').value)
             soundListWrite();
