@@ -141,7 +141,7 @@ Promise.all(
             console.log(savefile)
 
             var blob = new Blob([JSON.stringify(savefile)], { type: "text/plain;charset=utf-8" });
-            FileSaver.saveAs(blob, `${id}.eci`);
+            saveAs(blob, `${id}.eci`);
         }
     })
 
