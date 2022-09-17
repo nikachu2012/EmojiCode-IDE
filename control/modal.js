@@ -26,7 +26,7 @@ const filebase64 = () => {
         const reader = new FileReader()
 
         if (InputID.value == '') {
-            alert('idが入力されていません。')
+            alert('IDが入力されていません。')
         }
         else {
             reader.onload = (event) => {
