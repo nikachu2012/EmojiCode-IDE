@@ -27,6 +27,7 @@
     <img src="./assets/logo.svg" alt="EmojiCode">
     <span class="text">EmojiScript</span>
     <button id="file">ファイル</button>
+    <button id="tool">ツール</button>
     <button id="help">ヘルプ</button>
     <button id="headButton_run" class="material-symbols-outlined" style="font-size: 18px;color: #4cbf56;"
       onclick="pushFlag()">flag</button>
@@ -178,6 +179,12 @@
     </div>
   </div>
 
+  <div class="menu menu_tool" onclick="buttonHelp();">
+    <div class="menu-pulldown menu-pulldown-help">
+      <div class="content" onclick="updateQuickSaveControl()">クイックセーブ管理ツール</div>
+    </div>
+  </div>
+
   <div class="modal modal1">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 1">
@@ -303,6 +310,23 @@
     </div>
   </div>
 
+  <div class="modal modal8">
+    <!-- スプライト作成モーダル -->
+    <div class="modal-window 8" style="width: 400px;">
+      <div class="modal-windowTitle">
+        <div class="title">クイックセーブ管理ツール</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        クイックセーブの管理を行うことができます。
+        <hr>
+
+        <div id="quickSaveField"></div>
+        
+      </div>
+    </div>
+  </div>
+
   <div class="viewButton" id="viewButton" style="visibility: hidden;">
     <span class="material-symbols-outlined icon">chevron_right</span>
   </div>
@@ -343,6 +367,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
+  <script src="./modules/FileSaver.min.js"></script>
 
   <script src="./EmojiCode-sprite/emojisprite.js"></script>
   <script src="./EmojiCode-audio/emojiaudio.js"></script>

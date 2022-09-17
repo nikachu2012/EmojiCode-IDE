@@ -133,6 +133,18 @@
     cursor: pointer;
 }
 
+#audioFileUpload {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 270px;
+    height: 100px;
+
+    opacity: 0;
+
+    cursor: pointer;
+}
+
 #saveFileLoad {
     position: absolute;
     left: 0;
@@ -196,4 +208,37 @@ dd {
 
 .pictureSetting .imgSize {
     width: 200px;
+}
+
+.quickSave_content .title {
+    font-size: medium;
+}
+
+.quickSave_content .quickSave_menu {
+    font-size: 10px;
+    
+    position: relative;
+
+    margin-bottom: 15px;
+}
+
+.quickSave_content .quickSave_menu .time {
+    position: absolute;
+    left: 0%;
+}
+
+.quickSave_content .quickSave_menu .control{
+    display: flex;
+
+    position: absolute;
+    right: 0%;
+}
+
+
+.quickSave_content .quickSave_menu .control * {
+    margin-left: 5px;
+
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
 }
