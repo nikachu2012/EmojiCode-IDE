@@ -163,3 +163,47 @@ function sizeCanvas(width, height, textid, textid2) {
         heightArea.value = 0;
     }
 }
+
+const audioFileUpdate = () => {
+    const audioFileUpload = document.querySelector('#audioFileUpload').files[0];
+
+    if(audioFileUpload !== undefined){
+        document.getElementById('audioUploadArea').className += ' selected'
+    }
+    else{
+        document.getElementById('audioUploadArea').className = document.getElementById('audioUploadArea').className.replace(' selected', '')
+    }
+}
+
+const audioFileLoad = () => {
+    const audioFileUpload = document.querySelector('#audioFileUpload');
+    const inputID = document.querySelector('#audioInputId')
+    
+    const file = audioFileUpload.files[0];
+
+    const reader = new FileReader();
+
+    if(inputID.value == '') {
+        alert('IDが入力されていません。')
+    }
+    else{
+        reader.onload = (event) => {
+            const base64Text = event.target.result;
+
+            emojiau.createSound(inputID.value, base64Text)
+
+            closeModal();
+            soundListWrite();
+            audioFileUpload.value = "";
+            inputID.value = "";
+
+        }
+
+        if(file) {
+            reader.readAsDataURL(file)
+        }
+        else{
+            alert('ファイルをアップロードしてください。')
+        }
+    }
+}

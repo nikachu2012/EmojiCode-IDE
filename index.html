@@ -228,9 +228,11 @@
         <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
       </div>
       <div class="modal-contents">
-        <input id="addSound_input" type="url" placeholder="音声がアップロードされたURL" class="addSound_input">
-        <input id="addSound_inputID" type="url" placeholder="IDを入力" class="addSound_input">
-        <button class="confirm" id="addSound_confirm">確定</button>
+        <div class="upload" id="audioUploadArea">
+          <input type="file" id="audioFileUpload" accept="audio/mpeg,audio/aac,audio/ogg,audio/wav" onchange="audioFileUpdate();">
+        </div>
+        <input type="text" id="audioInputId" placeholder="IDを入力" class="inputID">
+        <button class="confirm" onclick="audioFileLoad()">確定</button>
       </div>
     </div>
   </div>

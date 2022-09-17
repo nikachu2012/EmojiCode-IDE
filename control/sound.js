@@ -31,24 +31,3 @@ const soundDelList = (id) => {
     }
     soundListWrite();
 }
-
-document.getElementById('addSound_confirm').addEventListener('click', () => {
-    if (document.getElementById('addSound_inputID').value !== "" && document.getElementById('addSound_input').value !== "") {
-        if (!Object.keys(emojiau.soundData).includes(document.getElementById('addSound_inputID').value)) {
-            emojiau.createSound(document.getElementById('addSound_inputID').value, document.getElementById('addSound_input').value)
-            soundListWrite();
-        }
-        else {
-            alert('すでに登録されています\n再登録したい場合は一度削除してください。')
-        }
-    }
-    else {
-        alert('IDまたはURLが入力されていません。')
-    }
-
-
-    closeModal();
-    document.getElementById('addSound_input').value = "";
-    document.getElementById('addSound_inputID').value = "";
-
-})
