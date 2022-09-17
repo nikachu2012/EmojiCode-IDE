@@ -67,7 +67,7 @@ Promise.all(
 
         const id = window.prompt('保存名を入力してください')
 
-        if (id === '') {
+        if (id == '' || id == null) {
 
         }
         else {
