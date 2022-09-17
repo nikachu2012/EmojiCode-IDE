@@ -1,5 +1,5 @@
 const pushFlag = () => {
-    const code = Blockly.JavaScript.workspaceToCode(); zw
+    const code = Blockly.JavaScript.workspaceToCode();
     document.getElementById('console').innerHTML = `<div class="logArea" id="logArea"></div>`
     document.getElementById('outputJS').innerHTML = `<pre><code>${code}</code></pre>`
 
