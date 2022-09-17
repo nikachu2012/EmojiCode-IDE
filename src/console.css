@@ -71,6 +71,7 @@
   margin-block-start: 0;
 
   width: auto;
+  min-height: 300px;
   height: calc(100vh - 505px);
 
   width: var(--selector);
@@ -196,6 +197,7 @@ pre {
   position: relative;
 
   width: 480px;
+  min-height: 250px;
   height: calc(100vh - 505px);
   overflow-y: scroll;
 
