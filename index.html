@@ -26,7 +26,7 @@
   <div class="head">
     <img src="./assets/logo.svg" alt="EmojiCode">
     <span class="text">EmojiCode</span>
-    <button id="file">ファイル</button>
+    <button id="file">メニュー</button>
     <button id="tool">ツール</button>
     <button id="help">ヘルプ</button>
     <button id="headButton_run" class="material-symbols-outlined" style="font-size: 18px;color: #4cbf56;"
@@ -37,7 +37,8 @@
   </div>
 
   <div class="body">
-    <div class="code" id="code" style="width: calc(100vw - 500px)"></div>
+    <div class="code" id="code"></div>
+    <div class="code-editor" id="code-editor"></div>
     <div class="run" id="run">
       <div class="button-body">
         <div class="left">
@@ -166,7 +167,8 @@
       <hr>
       <div class="content" id="quickSave">クイックセーブ</div>
       <div class="content" id="fileSaveButton">ファイル保存</div>
-
+      <hr>
+      <div class="content" id="changeCodeInput" title="プログラムをテキストで書くモードに変更します" onclick="changeInput()">テキストモードに変更</div>
     </div>
   </div>
 
@@ -236,7 +238,8 @@
       </div>
       <div class="modal-contents">
         <div class="upload" id="audioUploadArea">
-          <input type="file" id="audioFileUpload" accept="audio/mpeg,audio/aac,audio/ogg,audio/wav" onchange="audioFileUpdate();">
+          <input type="file" id="audioFileUpload" accept="audio/mpeg,audio/aac,audio/ogg,audio/wav"
+            onchange="audioFileUpdate();">
         </div>
         <input type="text" id="audioInputId" placeholder="IDを入力" class="inputID">
         <button class="confirm" onclick="audioFileLoad()">確定</button>
@@ -322,7 +325,7 @@
         <hr>
 
         <div id="quickSaveField"></div>
-        
+
       </div>
     </div>
   </div>
@@ -366,6 +369,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
   <script src="./modules/FileSaver.min.js"></script>
 
@@ -376,7 +380,9 @@
   <script src="./control/modal.js"></script>
   <script src="./control/save.js"></script>
   <script src="./control/debugmenu.js"></script>
+  <script src="./control/codeInput.js"></script>
 
+  <script src="./modules/vs/loader.js"></script>
   <script>
     (function () {
       if (window.matchMedia && window.matchMedia('(max-device-width: 1000px)').matches) {
@@ -397,6 +403,40 @@
       e.preventDefault();
       e.returnValue = 'ファイルは保存しましたか？保存していない場合、ページを移動するとデータが消える可能性があります！';
     });
+
+    let getEditorText;
+    let _editorDelete;
+    let _createEditor;
+    require.config({ paths: { 'vs': 'modules/vs' } });
+    require(['vs/editor/editor.main'], function () {
+      var editor = monaco.editor.create(document.getElementById('code-editor'), {
+        value: [
+          'function start() {',
+          '\tconsole.log("Hello world!");',
+          '}'
+        ].join('\n'),
+        language: 'javascript',
+        automaticLayout: true,
+        theme: "vs-dark"
+
+      });
+
+      getEditorText = () => editor.getValue();
+      _editorDelete = () => monaco.editor.getModels().forEach(model => model.dispose());
+      _createEditor = (value) => {
+        var editor = monaco.editor.create(document.getElementById('code-editor'), {
+          value: [
+            value
+          ].join('\n'),
+          language: 'javascript',
+          automaticLayout: true,
+          theme: "vs-dark"
+
+        });
+      }
+
+    });
+
   </script>
 </body>
 

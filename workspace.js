@@ -74,9 +74,12 @@ Promise.all(
             const xmlDom = Blockly.Xml.workspaceToDom(workspace);
             const xmlText = Blockly.Xml.domToPrettyText(xmlDom);
 
+            const editorText = getEditorText();
+
             let savefile = {}
 
             savefile.blocklyXML = encodeURI(xmlText)
+            savefile.editorText = encodeURI(editorText)
             savefile.soundDetail = encodeURI(JSON.stringify(emojiau.soundDetail));
             savefile.spriteOption = encodeURI(JSON.stringify(spriteOption));
             savefile.saveDate = Date.now().toString();
@@ -95,12 +98,15 @@ Promise.all(
 
             const convertSpriteOption = JSON.parse(decodeURI(data.spriteOption));
             const convertSoundDetail = JSON.parse(decodeURI(data.soundDetail));
+            const editorText = decodeURI(data.editorText)
 
             console.log(convertSpriteOption)
             var xml = Blockly.Xml.textToDom(decodeURI(data.blocklyXML));
             workspace.clear();
             Blockly.Xml.domToWorkspace(xml, workspace);
 
+            _editorDelete();
+            _createEditor(editorText)
             emojiau.soundDetail = {}
             spriteOption = {}
 
@@ -130,9 +136,12 @@ Promise.all(
             const xmlDom = Blockly.Xml.workspaceToDom(workspace);
             const xmlText = Blockly.Xml.domToPrettyText(xmlDom);
 
+            const editorText = getEditorText();
+
             let savefile = {}
 
             savefile.blocklyXML = encodeURI(xmlText)
+            savefile.editorText = encodeURI(editorText)
             savefile.soundDetail = encodeURI(JSON.stringify(emojiau.soundDetail));
             savefile.spriteOption = encodeURI(JSON.stringify(spriteOption));
             savefile.saveDate = Date.now().toString();
@@ -202,11 +211,15 @@ Promise.all(
 
                 const convertSpriteOption = JSON.parse(decodeURI(data.spriteOption));
                 const convertSoundDetail = JSON.parse(decodeURI(data.soundDetail));
+                const editorText = decodeURI(data.editorText);
 
                 console.log(convertSpriteOption)
                 var xml = Blockly.Xml.textToDom(decodeURI(data.blocklyXML));
                 workspace.clear();
                 Blockly.Xml.domToWorkspace(xml, workspace);
+
+                _editorDelete();
+                _createEditor(editorText)
 
                 emojiau.soundDetail = {}
                 spriteOption = {}
