@@ -34,15 +34,29 @@ const pushFlag = () => {
 
         toastr.success('コードの実行が完了しました。');
 
-        
+
     } catch (error) {
         document.getElementById('error').innerHTML =
-            `<div class="error material-symbols-outlined" style="font-size: 40pt;">close</div>
-                <span class="text">エラーが発見されました。</span>
-                <div class="message">
-                  ${error}
-                </div>`;
+            `
+            <div style="display: flex;">
+                <div class="error material-symbols-outlined" style="font-size: 40pt;">close</div>
+                <div style="margin-top:10px;">
+                    <span class="text">エラーが発見されました。</span><br>
+                    <span class="errorSearch_button" id="searchGoogle">[Googleで検索]</span><span class="errorSearch_button" id="translateDeepL">[DeepLで翻訳]</span>
+                </div>
+            </div>
+            <div class="message">
+                ${error}
+            </div>`;
         document.getElementById('outputAST').innerHTML = `エラーが発見されたため、ASTを出力できませんでした。`
+
+        document.getElementById('searchGoogle').addEventListener('click', () => {
+            window.open(`https://google.com/search?q=${error}`, '_blank')
+        })
+
+        document.getElementById('translateDeepL').addEventListener('click', () => {
+            window.open(`https://www.deepl.com/ja/translator#en/ja/${error}`, '_blank')
+        })
 
         toastr.error('エラーが発見されました。<br>修正してください。');
     }
