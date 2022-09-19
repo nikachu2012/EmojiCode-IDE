@@ -1,9 +1,9 @@
 const pushFlag = () => {
 
     const ele = document.getElementById('run-canvas')
-    while( ele.firstChild ){
-        ele.removeChild( ele.firstChild );
-      }
+    while (ele.firstChild) {
+        ele.removeChild(ele.firstChild);
+    }
     const backup = spriteOption;
     spriteOption = {};
     Object.keys(backup).forEach((e) => {

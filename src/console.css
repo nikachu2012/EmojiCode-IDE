@@ -349,3 +349,9 @@ pre {
   margin-top: 8px;
   margin-left: 0px;
 }
+
+.errorSearch_button{
+  user-select: none;
+  cursor: pointer;
+  text-decoration: underline
+}

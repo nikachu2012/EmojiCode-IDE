@@ -93,6 +93,11 @@ Promise.all(
     const loadFile = (id) => {
         closeModal();
 
+        const ele = document.getElementById('run-canvas')
+        while (ele.firstChild) {
+            ele.removeChild(ele.firstChild);
+        }
+
         localforage.getItem(id).then(function (value) {
             const data = JSON.parse(value)
 
