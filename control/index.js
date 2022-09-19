@@ -1,4 +1,15 @@
 const pushFlag = () => {
+
+    const ele = document.getElementById('run-canvas')
+    while( ele.firstChild ){
+        ele.removeChild( ele.firstChild );
+      }
+    const backup = spriteOption;
+    spriteOption = {};
+    Object.keys(backup).forEach((e) => {
+        emojisp.createSprite(backup[e])
+    })
+
     let code = ""
     if (isBlockly == true) {
         code = Blockly.JavaScript.workspaceToCode();
@@ -22,6 +33,8 @@ const pushFlag = () => {
         runCode(code);
 
         toastr.success('コードの実行が完了しました。');
+
+        
     } catch (error) {
         document.getElementById('error').innerHTML =
             `<div class="error material-symbols-outlined" style="font-size: 40pt;">close</div>
