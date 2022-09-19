@@ -105,8 +105,7 @@ Promise.all(
             workspace.clear();
             Blockly.Xml.domToWorkspace(xml, workspace);
 
-            _editorDelete();
-            _createEditor(editorText)
+            editorReplace(editorText)
             emojiau.soundDetail = {}
             spriteOption = {}
 
@@ -218,8 +217,7 @@ Promise.all(
                 workspace.clear();
                 Blockly.Xml.domToWorkspace(xml, workspace);
 
-                _editorDelete();
-                _createEditor(editorText)
+                editorReplace(editorText)
 
                 emojiau.soundDetail = {}
                 spriteOption = {}
