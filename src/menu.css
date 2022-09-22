@@ -31,13 +31,19 @@
 .menu-pulldown-file {
     position: absolute;
     top: 0px;
-    left: 137px; 
+    left: 133px; 
+}
+
+.menu-pulldown-tool {
+    position: absolute;
+    top: 0px;
+    left: 210px; 
 }
 
 .menu-pulldown-help {
     position: absolute;
     top: 0px;
-    left: 217px;
+    left: 270px;
 }
 
 
