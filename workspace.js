@@ -133,7 +133,7 @@ Promise.all(
     document.querySelector('#fileSaveButton').addEventListener('click', () => {
         const id = window.prompt('ファイル名を入力してください。')
 
-        if (id === '') {
+        if (id === '' || id == null) {
 
         }
         else {
