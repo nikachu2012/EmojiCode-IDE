@@ -238,10 +238,17 @@ Promise.all(
                 soundListWrite();
             }
 
-            reader.readAsText(file)
-            closeModal();
-            fileinput.value = '';
-            document.getElementById('saveFileArea').className = document.getElementById('saveFileArea').className.replace(' selected', '')
+            if(file){
+                reader.readAsText(file)
+                closeModal();
+                fileinput.value = '';
+                document.getElementById('saveFileArea').className = document.getElementById('saveFileArea').className.replace(' selected', '')
+
+            }
+            else{
+                toastr.error('ファイルをアップロードしてください')
+            }
+            
         } catch (error) {
             alert('EmojiCode IDE Error detect!\nPlease see DevTools.')
             console.log(error);
