@@ -62,7 +62,7 @@ spriteDelList = (id) => {
 openSpriteEdit = (id) => {
     document.getElementById('sizeChange_confirm').addEventListener('click', () => {
         closeSpriteChange(`${id}`)
-    });
+    },{once: true});
     document.getElementById('sizeChange_button').addEventListener('click', () => {
         sizeCanvas(emojisp.accessSpriteData(id).width, emojisp.accessSpriteData(id).height, 'sizeChange_width', 'sizeChange_height')
     });
