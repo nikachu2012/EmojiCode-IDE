@@ -82,5 +82,8 @@ closeSpriteChange = (id) => {
         url: emojisp.accessSpriteData(id).url,
     }
 
+    document.getElementById('sizeChange_width').value = null;
+    document.getElementById('sizeChange_height').value = null;
+
     emojisp.editSprite(id, option)
 }
