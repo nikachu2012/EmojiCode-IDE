@@ -54,3 +54,8 @@ a:hover,
 a:active {
   color: inherit;
 }
+
+
+img {
+  image-rendering: pixelated;
+}
