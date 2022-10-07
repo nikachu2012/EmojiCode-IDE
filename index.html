@@ -403,6 +403,7 @@
     integrity="sha512-LsPG7HaqMY141NrHpwkr7NyZ1Ede5kqiyyxynjCIh0y593ucZeNNZ1ViO++TJAVusvsh6ZGkE8Vd/5WEp5TGvw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.10.1/ext-language_tools.js"></script>
+  <script src="./control/ace.js"></script>
 
   <script>
     (function () {
@@ -420,37 +421,7 @@
       e.innerHTML = 'v1.0'
     })
 
-    window.addEventListener('beforeunload', function (e) {
-      e.preventDefault();
-      e.returnValue = 'ファイルは保存しましたか？保存していない場合、ページを移動するとデータが消える可能性があります！';
-    });
-
-    ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.10.1/');
-
-    var editor = ace.edit("code-editor");
-    editor.$blockScrolling = Infinity;
-    editor.setOptions({
-      enableBasicAutocompletion: true,
-      enableSnippets: true,
-      enableLiveAutocompletion: true
-    });
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-    editor.setFontSize(16)
-    editor.setShowPrintMargin(false);
-    editor.insert([
-          'function start() {',
-          '\tlog("Hello world!");',
-          '}'
-        ].join('\n'))
-
-    const editorReplace = (value) => {
-      editor.selectAll();
-      editor.remove();
-      editor.insert(value)
     }
-
-    getEditorText = () => editor.getValue();
   </script>
 </body>
 
