@@ -2,10 +2,13 @@ const openDebug = () => {
     document.querySelector('.debug_body').style.visibility = "visible"
 }
 
+let debug = false;
+
 (() => {
     const parameter = location.search.slice(1).split('&');
     parameter.forEach((e, i) => {
         if (e == 'debug=true') {
+            debug = true;
             openDebug();
         }
     })
