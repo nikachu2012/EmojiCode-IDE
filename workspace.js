@@ -154,7 +154,13 @@ Promise.all(
             console.log(savefile)
 
             var blob = new Blob([JSON.stringify(savefile)], { type: "text/plain;charset=utf-8" });
-            saveAs(blob, `${id}.eci`);
+
+            if (debug == false) {
+                saveAs(blob, `${id}.eci`);
+            }
+            else if (debug == true) {
+                saveAs(blob, `[debug]${id}.json`);
+            }
         }
     })
 
