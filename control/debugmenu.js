@@ -11,6 +11,15 @@ const openDebug = () => {
     })
 })();
 
+document.querySelector('#uaCopy').addEventListener('click', () => {
+    let text = navigator.userAgent;
+    navigator.clipboard.writeText(text)
+        .then(
+            success => alert('UAをコピーしました'),
+            error => alert('Permission Denied.')
+        );
+});
+
 /*
     https://q-az.net/elements-drag-and-drop/
     より引用
