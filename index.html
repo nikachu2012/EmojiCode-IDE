@@ -196,7 +196,8 @@
     <div class="menu-pulldown menu-pulldown-help">
       <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net', '_blank');">ドキュメント</div>
       <div class="content" onclick="displayModal('modal7')">お問い合わせ</div>
-      <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net/docs/donate');">Please donate!</div>
+      <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net/docs/donate');">Please donate!
+      </div>
       <hr>
       <div class="content" onclick="displayModal('modal4')">バージョン情報</div>
     </div>
@@ -402,7 +403,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.10.1/ace.min.js"
     integrity="sha512-LsPG7HaqMY141NrHpwkr7NyZ1Ede5kqiyyxynjCIh0y593ucZeNNZ1ViO++TJAVusvsh6ZGkE8Vd/5WEp5TGvw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.10.1/ext-language_tools.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.10.1/ext-language_tools.js"></script>
   <script src="./control/ace.js"></script>
 
   <script>
@@ -417,6 +418,7 @@
         return false;
       }
     })();
+
     document.querySelectorAll('#ec_version').forEach((e) => {
       e.innerHTML = 'v1.0'
     })

@@ -238,17 +238,17 @@ Promise.all(
                 soundListWrite();
             }
 
-            if(file){
+            if (file) {
                 reader.readAsText(file)
                 closeModal();
                 fileinput.value = '';
                 document.getElementById('saveFileArea').className = document.getElementById('saveFileArea').className.replace(' selected', '')
 
             }
-            else{
+            else {
                 toastr.error('ファイルをアップロードしてください')
             }
-            
+
         } catch (error) {
             alert('EmojiCode IDE Error detect!\nPlease see DevTools.')
             console.log(error);
