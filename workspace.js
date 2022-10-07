@@ -82,6 +82,9 @@ Promise.all(
             savefile.editorText = encodeURI(editorText)
             savefile.soundDetail = encodeURI(JSON.stringify(emojiau.soundDetail));
             savefile.spriteOption = encodeURI(JSON.stringify(spriteOption));
+            savefile.buildBlockly = encodeURI(Blockly.JavaScript.workspaceToCode(workspace));
+            savefile.isBlockly = isBlockly;
+
             savefile.saveDate = Date.now().toString();
 
 
@@ -148,7 +151,9 @@ Promise.all(
             savefile.editorText = encodeURI(editorText)
             savefile.soundDetail = encodeURI(JSON.stringify(emojiau.soundDetail));
             savefile.spriteOption = encodeURI(JSON.stringify(spriteOption));
+            savefile.buildBlockly = encodeURI(Blockly.JavaScript.workspaceToCode(workspace))
             savefile.saveDate = Date.now().toString();
+            savefile.isBlockly = isBlockly;
 
 
             console.log(savefile)
