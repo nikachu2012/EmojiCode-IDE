@@ -8,6 +8,9 @@ const log = (text) => {
 
   // 指定した要素の中の末尾に挿入
   logArea.appendChild(new_element);
+
+  const console = document.getElementById("console");
+  console.scrollTop = console.scrollHeight;
 };
 
 const runCode = (code) => eval(`${code}\nstart();`);
