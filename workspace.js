@@ -1,3 +1,4 @@
+let workspace = {};
 
 Promise.all(
     ["./emojicode/build/workspace.xml", "./emojicode/build/toolbox.xml"].map(async file => {
@@ -48,7 +49,7 @@ Promise.all(
         },
     };
 
-    var workspace = Blockly.inject('code', options);
+    workspace = Blockly.inject('code', options);
 
     const code = document.getElementById('code')
 
