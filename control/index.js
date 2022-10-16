@@ -27,7 +27,7 @@ const pushFlag = () => {
         document.getElementById('error').innerHTML =
             `<div class="success material-symbols-outlined" style="font-size: 40pt;">done</div>
                 <span class="text">エラーは発見されませんでした。</span>`;
-        document.getElementById('outputAST').innerHTML = `<pre style="word-break:none;"><code>${JSON.stringify(AST, null , "  ")}</code></pre>`
+        document.getElementById('outputAST').innerHTML = `<pre style="word-break:none;"><code>${JSON.stringify(AST, null, "  ")}</code></pre>`
         hljs.initHighlighting();
 
         runCode(code);
