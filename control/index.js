@@ -68,7 +68,13 @@ document.getElementById('close').addEventListener('click', () => {
     document.getElementById('run').style.visibility = 'hidden';
     document.getElementById('run').style.width = '0px'
 
-    document.getElementById('code').style.width = '100vw'
+    if (isBlockly == true) {
+        document.getElementById('code').style.width = '100vw'
+        
+    }
+    else {
+        document.querySelector('.code-editor').style.width = '100vw'
+    }
     document.getElementById('viewButton').style.visibility = `visible`
 })
 
@@ -76,6 +82,14 @@ document.getElementById('viewButton').addEventListener('click', () => {
     document.getElementById('run').style.visibility = 'visible';
     document.getElementById('run').style.width = '500px'
 
-    document.getElementById('code').style.width = 'calc(100vw - 500px)'
+    if (isBlockly == true) {
+        document.getElementById('code').style.width = 'calc(100vw - 500px)'
+        
+    }
+    else{
+        document.querySelector('.code-editor').style.width = 'calc(100vw - 500px)'
+    }
+
     document.getElementById('viewButton').style.visibility = 'hidden'
+
 })
