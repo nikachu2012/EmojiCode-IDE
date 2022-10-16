@@ -12,7 +12,7 @@ const pushFlag = () => {
 
     let code = ""
     if (isBlockly == true) {
-        code = Blockly.JavaScript.workspaceToCode();
+        code = Blockly.JavaScript.workspaceToCode(workspace);
     }
     else {
         code = getEditorText();
