@@ -36,6 +36,7 @@ const pushFlag = () => {
 
 
     } catch (error) {
+        console.error(error)
         document.getElementById('error').innerHTML =
             `
             <div style="display: flex;">
