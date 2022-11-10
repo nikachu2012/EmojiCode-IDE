@@ -39,18 +39,20 @@ const filebase64 = () => {
                     var option = {
                         url: base64Text,
                         id: InputID.value,
-                        width: parseInt(document.getElementById('pictureWidth').value),
-                        height: parseInt(document.getElementById('pictureHeight').value),
                         x: 0,
                         y: 0,
                         deg: 0,
                         rotateType: "free",
-                        hanten: false,
                         rebound: false,
+                        visibility: true,
+
                     }
 
                     console.log(option)
+
+                    // スプライトの作成
                     emojisp.createSprite(option)
+                    
                     spriteListWrite();
                     closeModal();
                     pictureSetting.innerHTML = `画像を選択すると表示されます。`
