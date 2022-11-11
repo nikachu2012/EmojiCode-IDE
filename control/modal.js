@@ -21,7 +21,6 @@ const filebase64 = () => {
         const uploadImage = document.querySelector('#fileUpload')
         const InputID = document.getElementById('inputId')
         const file = uploadImage.files[0]
-        const pictureSetting = document.getElementById('pictureSetting')
 
         const reader = new FileReader()
 
@@ -39,11 +38,11 @@ const filebase64 = () => {
                     var option = {
                         url: base64Text,
                         id: InputID.value,
-                        x: 0,
-                        y: 0,
+                        x: app.screen.width / 2,
+                        y: app.screen.height / 2,
                         deg: 0,
                         rotateType: "free",
-                        rebound: false,
+                        hanten: false,
                         visibility: true,
 
                     }
@@ -55,11 +54,9 @@ const filebase64 = () => {
                     
                     spriteListWrite();
                     closeModal();
-                    pictureSetting.innerHTML = `画像を選択すると表示されます。`
                     uploadImage.value = '';
                     document.getElementById('uploadArea').className = document.getElementById('uploadArea').className.replace(' selected', '')
                     InputID.value = '';
-                    pictureSetting.className = pictureSetting.className.replace(' open', '')
                 }
             }
             if (file) {
@@ -82,40 +79,12 @@ const filebase64 = () => {
 
 const fileUpdate = () => {
     const upload = document.getElementById('fileUpload').files[0]
-    const pictureSetting = document.getElementById('pictureSetting')
 
-
-    const uploadImage = document.querySelector('#fileUpload')
-    const file = uploadImage.files[0]
     if (upload !== undefined) {
         document.getElementById('uploadArea').className += ' selected'
-
-        const reader = new FileReader()
-
-        reader.onload = (event) => {
-            const base64Text = reader.result;
-            const img = new Image();
-            img.src = base64Text;
-
-            img.onload = () => {
-                pictureSetting.innerHTML = `
-                <input type="checkbox" name="size" id="size" onchange="connecttext('pictureWidth', 'pictureHeight','canvasSize', this.checked)">
-                <label for="size">サイズを変更する</label>
-                <button id="canvasSize" disabled="disabled" onclick="sizeCanvas(${img.naturalWidth}, ${img.naturalHeight},'pictureWidth', 'pictureHeight')">キャンバスサイズに合わせる</button>
-                <input type="number" class="imgSize" id="pictureWidth" placeholder="横幅" value="${img.naturalWidth}" disabled="disabled">px<br>
-                <input type="number" class="imgSize" id="pictureHeight" placeholder="縦幅" value="${img.naturalHeight}" disabled="disabled">px<br>
-                <div>0を入力すると自動計算します。</div>
-                `
-            }
-
-        }
-        if (file) {
-            reader.readAsDataURL(file)
-        }
     }
     else {
         document.getElementById('uploadArea').className = document.getElementById('uploadArea').className.replace(' selected', '')
-        pictureSetting.innerHTML = `画像を選択すると表示されます。`
     }
 
 }
@@ -125,6 +94,9 @@ const saveLoadUpdate = () => {
 
     if (upload !== undefined) {
         document.getElementById('saveFileArea').className += ' selected'
+    }
+    else {
+        document.getElementById('saveFileArea').className = document.getElementById('saveFileArea').className.replace(' selected', '')
     }
 }
 

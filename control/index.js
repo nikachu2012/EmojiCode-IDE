@@ -1,10 +1,11 @@
 const pushFlag = () => {
-
-    const ele = document.getElementById('run-canvas')
-    while (ele.firstChild) {
-        ele.removeChild(ele.firstChild);
-    }
     const backup = spriteOption;
+    
+    Object.keys(spriteOption).forEach(element => {
+        app.stage.removeChild(emojisp.spriteData[element])
+    });
+
+    
     spriteOption = {};
     Object.keys(backup).forEach((e) => {
         emojisp.createSprite(backup[e])
