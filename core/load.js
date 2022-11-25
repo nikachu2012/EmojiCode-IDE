@@ -90,10 +90,9 @@ document.querySelector('#quickLoad').addEventListener('click', () => {
 const loadFile = (id) => {
     closeModal();
 
-    const ele = document.getElementById('run-canvas')
-    while (ele.firstChild) {
-        ele.removeChild(ele.firstChild);
-    }
+    Object.keys(spriteOption).forEach(element => {
+        app.stage.removeChild(emojisp.spriteData[element])
+    });
 
     localforage.getItem(id).then(function (value) {
         const data = JSON.parse(value)
