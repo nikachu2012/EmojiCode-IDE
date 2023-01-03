@@ -198,7 +198,7 @@ const updateQuickSaveControl = () => {
         const selectModal = document.querySelector("#quickSaveField")
         selectModal.innerHTML = null
         keys.forEach((e, i) => {
-            if (e == '' || e == null) {
+            if (e == '' || e == null || /^emoji\_/.test(e)) {
 
             }
             else {

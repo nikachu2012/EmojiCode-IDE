@@ -61,7 +61,7 @@ document.querySelector('#quickLoad').addEventListener('click', () => {
         const selectModal = document.querySelector("#listBody")
         selectModal.innerHTML = null
         keys.forEach((e, i) => {
-            if (e == '' || e == null) {
+            if (e == '' || e == null || /^emoji\_/.test(e)) {
 
             }
             else {
