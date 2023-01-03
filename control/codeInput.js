@@ -4,7 +4,7 @@ const changeInput= ()=>{
     const code_editor = document.getElementById('code-editor')
     const button = document.getElementById('changeCodeInput')
     if(isBlockly == true){
-        // monaco editorに変更
+        // aceに変更
         code.style.width = '0';
         code.style.visibility = 'hidden';
         
