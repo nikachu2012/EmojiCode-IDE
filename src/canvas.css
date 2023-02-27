@@ -72,8 +72,8 @@
 }
 
 .run .fullscreen {
-  background: #ffffff;
-  border: solid 1px aqua;
+  background: #424242;
   box-sizing: border-box;
   margin-right: 2px;
+  color: white;
 }
