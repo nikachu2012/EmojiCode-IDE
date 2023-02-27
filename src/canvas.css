@@ -71,20 +71,6 @@
   font-size: 25px;
 }
 
-.run .plus {
-  background: #ffffff;
-  border: solid 1px aqua;
-  box-sizing: border-box;
-  margin-right: 2px;
-}
-
-.run .minus {
-  background: #ffffff;
-  border: solid 1px aqua;
-  box-sizing: border-box;
-  margin-right: 2px;
-}
-
 .run .fullscreen {
   background: #ffffff;
   border: solid 1px aqua;
