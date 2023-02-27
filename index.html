@@ -407,7 +407,6 @@
   <script src="./control/sound.js"></script>
   <script src="./control/modal.js"></script>
   <script src="./control/titleButton.js"></script>
-  <script src="./control/debugmenu.js"></script>
   <script src="./control/codeInput.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.10.1/ace.min.js"
@@ -418,6 +417,13 @@
 
   <script>
     (function () {
+      const parameter = location.search.slice(1).split('&');
+      parameter.forEach((e, i) => {
+        if (e == 'debug=true') {
+          debug = true;
+        }
+      })
+
       if (window.matchMedia && window.matchMedia('(max-device-width: 1000px)').matches) {
         document.getElementById('run').style.visibility = 'hidden';
         document.getElementById('run').style.width = '0px'
