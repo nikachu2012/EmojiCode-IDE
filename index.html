@@ -136,7 +136,7 @@
           </div>
         </div>
         <div class="tab-body">
-          <button class="create" onclick="displayModal('modal1')"><img
+          <button class="create" onclick="displayModal('modal_spriteCreate')"><img
               src="https://img.icons8.com/color/48/000000/plus-math.png"
               style="display: inline-block; vertical-align: top; width: 18px;" />スプライトの作成</button>
           <div class="sprite-body" id="spriteList">
@@ -146,7 +146,7 @@
 
         </div>
         <div class="tab-body">
-          <button class="create" onclick="displayModal('modal3')"><img
+          <button class="create" onclick="displayModal('modal_createSound')"><img
               src="https://img.icons8.com/color/48/000000/plus-math.png"
               style="display: inline-block; vertical-align: top; width: 18px;" />音声の追加</button>
           <div class="sprite-body" id="soundList">
@@ -177,7 +177,7 @@
       <div class="content" onclick="window.open(location.href, '_blank');">新しいタブで開く</div>
       <hr>
       <div class="content" id="quickLoad">クイックロード</div>
-      <div class="content" onclick="displayModal('modal6')">ファイルから開く</div>
+      <div class="content" onclick="displayModal('modal_loadFile')">ファイルから開く</div>
       <hr>
       <div class="content" id="quickSave">クイックセーブ</div>
       <div class="content" id="fileSaveButton">ファイル保存</div>
@@ -198,16 +198,16 @@
       <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net', '_blank');">ドキュメント</div>
       <div class="content" onclick="window.open('https:\/\/discord.gg/kyEPUBYeEJ');">コミュニティ
       </div>
-      <div class="content" onclick="displayModal('modal7')">お問い合わせ</div>
+      <div class="content" onclick="displayModal('modal_contact')">お問い合わせ</div>
       <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net/docs/donate');">Please donate!
       </div>
       <hr>
-      <div class="content" onclick="displayModal('modal4')">バージョン情報</div>
+      <div class="content" onclick="displayModal('modal_version')">バージョン情報</div>
     </div>
   </div>
 
 
-  <div class="modal modal1">
+  <div class="modal modal_spriteCreate">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 1">
       <div class="modal-windowTitle">
@@ -225,7 +225,7 @@
     </div>
   </div>
 
-  <div class="modal modal3">
+  <div class="modal modal_createSound">
     <div class="modal-window 3">
       <div class="modal-windowTitle">
         <div class="title">音声の追加</div>
@@ -242,7 +242,7 @@
     </div>
   </div>
 
-  <div class="modal modal4">
+  <div class="modal modal_version">
     <div class="modal-window 4">
       <div class="modal-windowTitle">
         <div class="title">バージョン情報</div>
@@ -264,7 +264,7 @@
     </div>
   </div>
 
-  <div class="modal modal5">
+  <div class="modal modal_quickLoad">
     <div class="modal-window 5">
       <div class="modal-windowTitle">
         <div class="title">クイックロード</div>
@@ -278,7 +278,7 @@
     </div>
   </div>
 
-  <div class="modal modal6">
+  <div class="modal modal_loadFile">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 6">
       <div class="modal-windowTitle">
@@ -294,7 +294,7 @@
     </div>
   </div>
 
-  <div class="modal modal7">
+  <div class="modal modal_contact">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 7">
       <div class="modal-windowTitle">
@@ -309,7 +309,7 @@
     </div>
   </div>
 
-  <div class="modal modal8">
+  <div class="modal modal_quickSaveManage">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 8" style="width: 400px;">
       <div class="modal-windowTitle">

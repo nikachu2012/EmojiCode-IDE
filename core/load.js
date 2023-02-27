@@ -83,7 +83,7 @@ document.querySelector('#quickLoad').addEventListener('click', () => {
         console.log(err);
     });
 
-    displayModal('modal5')
+    displayModal('modal_quickLoad')
 })
 
 

@@ -247,7 +247,7 @@ const updateQuickSaveControl = () => {
         console.log(err);
     });
 
-    displayModal('modal8')
+    displayModal('modal_quickSaveManage')
 }
 
 const clockDate = (UNIXdate) => {
