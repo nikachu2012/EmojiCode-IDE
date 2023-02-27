@@ -62,17 +62,6 @@ Promise.all(
         attributes: true,
         attributeFilter: ['style']
     })
-
-    document.querySelector('#allDeleteIDB').addEventListener('click', () => {
-        localforage.clear().then(function () {
-            // Run this code once the database has been entirely deleted.
-            console.log('Database is now empty.');
-        }).catch(function (err) {
-            alert('EmojiCode IDE Error detect!\nPlease see DevTools.')
-            console.log(err);
-        });
-    })
-
 });
 
 Blockly.HSV_SATURATION = 0.45;
