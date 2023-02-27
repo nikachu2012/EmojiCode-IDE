@@ -71,7 +71,7 @@
   font-size: 25px;
 }
 
-.run .fullscreen {
+.run  #close,#modeChange {
   background: #424242;
   box-sizing: border-box;
   margin-right: 2px;
