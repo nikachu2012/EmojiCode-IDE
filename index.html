@@ -433,7 +433,10 @@
       e.innerHTML = 'v1.1'
     })
 
-    if (debug == false) {
+    let url = new URL(window.location.href);
+    let params = url.searchParams;
+
+    if (params.get('debug') !== "true") {
       window.addEventListener('beforeunload', function (e) {
         e.preventDefault();
         e.returnValue = 'ファイルは保存しましたか？保存していない場合、ページを移動するとデータが消える可能性があります！';
