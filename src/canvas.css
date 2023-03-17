@@ -14,14 +14,14 @@
   margin: 0;
   padding: 0%;
 }
-
 .run .button-body {
   overflow: hidden;
-  margin-top: 4px;
   margin-left: 7px;
   margin-right: 7px;
 
-  height: 35px;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   user-select: none;
   position: relative;
@@ -71,23 +71,9 @@
   font-size: 25px;
 }
 
-.run .plus {
-  background: #ffffff;
-  border: solid 1px aqua;
+.run  #close,#modeChange {
+  background: #424242;
   box-sizing: border-box;
   margin-right: 2px;
-}
-
-.run .minus {
-  background: #ffffff;
-  border: solid 1px aqua;
-  box-sizing: border-box;
-  margin-right: 2px;
-}
-
-.run .fullscreen {
-  background: #ffffff;
-  border: solid 1px aqua;
-  box-sizing: border-box;
-  margin-right: 2px;
+  color: white;
 }

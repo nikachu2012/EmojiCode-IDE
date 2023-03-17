@@ -1,10 +1,11 @@
 const pushFlag = () => {
-
-    const ele = document.getElementById('run-canvas')
-    while (ele.firstChild) {
-        ele.removeChild(ele.firstChild);
-    }
     const backup = spriteOption;
+
+    Object.keys(spriteOption).forEach(element => {
+        app.stage.removeChild(emojisp.spriteData[element])
+    });
+
+
     spriteOption = {};
     Object.keys(backup).forEach((e) => {
         emojisp.createSprite(backup[e])
@@ -70,7 +71,7 @@ document.getElementById('close').addEventListener('click', () => {
 
     if (isBlockly == true) {
         document.getElementById('code').style.width = '100vw'
-        
+
     }
     else {
         document.querySelector('.code-editor').style.width = '100vw'
@@ -84,12 +85,34 @@ document.getElementById('viewButton').addEventListener('click', () => {
 
     if (isBlockly == true) {
         document.getElementById('code').style.width = 'calc(100vw - 500px)'
-        
+
     }
-    else{
+    else {
         document.querySelector('.code-editor').style.width = 'calc(100vw - 500px)'
     }
 
     document.getElementById('viewButton').style.visibility = 'hidden'
 
 })
+
+
+/*
+welcome V2
+//*/
+
+localforage.getItem('emoji_viewfirst_2.0').then(function (value) {
+    if (value == null) {
+        displayModal('modal_welcomeV2')
+        localforage.setItem('emoji_viewfirst_2.0', 'true').then(function (value) {
+        }).catch(function (err) {
+            // This code runs if there were any errors
+            console.log(err);
+        });
+    }
+    else if(value == 'true'){
+
+    }
+}).catch(function (err) {
+    // This code runs if there were any errors
+    console.log(err);
+});

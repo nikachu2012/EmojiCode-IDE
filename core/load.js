@@ -61,7 +61,7 @@ document.querySelector('#quickLoad').addEventListener('click', () => {
         const selectModal = document.querySelector("#listBody")
         selectModal.innerHTML = null
         keys.forEach((e, i) => {
-            if (e == '' || e == null) {
+            if (e == '' || e == null || /^emoji\_/.test(e)) {
 
             }
             else {
@@ -83,17 +83,16 @@ document.querySelector('#quickLoad').addEventListener('click', () => {
         console.log(err);
     });
 
-    displayModal('modal5')
+    displayModal('modal_quickLoad')
 })
 
 
 const loadFile = (id) => {
     closeModal();
 
-    const ele = document.getElementById('run-canvas')
-    while (ele.firstChild) {
-        ele.removeChild(ele.firstChild);
-    }
+    Object.keys(spriteOption).forEach(element => {
+        app.stage.removeChild(emojisp.spriteData[element])
+    });
 
     localforage.getItem(id).then(function (value) {
         const data = JSON.parse(value)

@@ -1,8 +1,3 @@
-const option = {
-    firstBackground: '#FFFFFF'
-}
-emojisp.create('run-canvas', option)
-
 spriteListWrite = () => {
     const key = Object.keys(spriteOption)
     if (key.length == 0) {
@@ -18,7 +13,6 @@ spriteListWrite = () => {
               <div class="image-base"><img src="${spriteOption[element].url}" class="icon"></div>
               <div class="id" title="${spriteOption[element].id}"><span class="text">${spriteOption[element].id}</span></div>
               <button class="material-symbols-outlined close-button" onclick="spriteDelList(\`${element}\`)">close</button>
-              <button class="material-symbols-outlined edit-button" onclick="openSpriteEdit(\`${element}\`)">edit</button>
             </div>`
 
             spriteList.appendChild(spriteElement)
@@ -56,20 +50,6 @@ spriteDelList = (id) => {
         console.log(error)
     }
 
-
-}
-
-openSpriteEdit = (id) => {
-    document.getElementById('sizeChange_confirm').addEventListener('click', () => {
-        closeSpriteChange(`${id}`)
-    },{once: true});
-    document.getElementById('sizeChange_button').addEventListener('click', () => {
-        sizeCanvas(emojisp.accessSpriteData(id).width, emojisp.accessSpriteData(id).height, 'sizeChange_width', 'sizeChange_height')
-    });
-    document.getElementById('sizeChange_width').value = emojisp.accessSpriteData(id).width;
-    document.getElementById('sizeChange_height').value = emojisp.accessSpriteData(id).height;
-
-    displayModal('modal2')
 
 }
 

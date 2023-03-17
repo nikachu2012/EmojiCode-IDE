@@ -45,8 +45,8 @@
     <button id="help">ヘルプ</button>
     <button id="headButton_run" class="material-symbols-outlined" style="font-size: 18px;color: #4cbf56;"
       onclick="pushFlag()">flag</button>
-    <!-- <button id="headButton_circle" class="material-symbols-outlined hbstop"
-      style="font-size: 18px; color: #ec5959;">circle</button> -->
+    <button id="headButton_circle" class="material-symbols-outlined hbstop"
+      style="font-size: 18px; color: #ec5959;" onclick="emoji.loop.allStop();">circle</button>
 
   </div>
 
@@ -57,10 +57,11 @@
       <div class="button-body">
         <div class="left">
           <button class="material-symbols-outlined flag" id="flag" title="実行" onclick="pushFlag();">flag</button>
-          <!--<button class="material-symbols-outlined circle" title="停止">circle</button> -->
+          <button class="material-symbols-outlined circle" title="停止" onclick="emoji.loop.allStop();">circle</button>
         </div>
         <div class="right">
-          <button class="material-symbols-outlined fullscreen" id="close" title="右側を閉じる">close</button>
+          <button class="material-symbols-outlined" id="modeChange" title="右側を閉じる">javascript</button>
+          <button class="material-symbols-outlined" id="close" title="右側を閉じる">close</button>
         </div>
       </div>
       <div class="run-canvas" id="run-canvas"></div>
@@ -136,7 +137,7 @@
           </div>
         </div>
         <div class="tab-body">
-          <button class="create" onclick="displayModal('modal1')"><img
+          <button class="create" onclick="displayModal('modal_spriteCreate')"><img
               src="https://img.icons8.com/color/48/000000/plus-math.png"
               style="display: inline-block; vertical-align: top; width: 18px;" />スプライトの作成</button>
           <div class="sprite-body" id="spriteList">
@@ -146,7 +147,7 @@
 
         </div>
         <div class="tab-body">
-          <button class="create" onclick="displayModal('modal3')"><img
+          <button class="create" onclick="displayModal('modal_createSound')"><img
               src="https://img.icons8.com/color/48/000000/plus-math.png"
               style="display: inline-block; vertical-align: top; width: 18px;" />音声の追加</button>
           <div class="sprite-body" id="soundList">
@@ -177,7 +178,7 @@
       <div class="content" onclick="window.open(location.href, '_blank');">新しいタブで開く</div>
       <hr>
       <div class="content" id="quickLoad">クイックロード</div>
-      <div class="content" onclick="displayModal('modal6')">ファイルから開く</div>
+      <div class="content" onclick="displayModal('modal_loadFile')">ファイルから開く</div>
       <hr>
       <div class="content" id="quickSave">クイックセーブ</div>
       <div class="content" id="fileSaveButton">ファイル保存</div>
@@ -198,16 +199,16 @@
       <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net', '_blank');">ドキュメント</div>
       <div class="content" onclick="window.open('https:\/\/discord.gg/kyEPUBYeEJ');">コミュニティ
       </div>
-      <div class="content" onclick="displayModal('modal7')">お問い合わせ</div>
+      <div class="content" onclick="displayModal('modal_contact')">お問い合わせ</div>
       <div class="content" onclick="window.open('https:\/\/emojicode-doc.nikachu.net/docs/donate');">Please donate!
       </div>
       <hr>
-      <div class="content" onclick="displayModal('modal4')">バージョン情報</div>
+      <div class="content" onclick="displayModal('modal_version')">バージョン情報</div>
     </div>
   </div>
 
 
-  <div class="modal modal1">
+  <div class="modal modal_spriteCreate">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 1">
       <div class="modal-windowTitle">
@@ -219,38 +220,13 @@
           <input type="file" id="fileUpload" accept="image/jpeg,image/png" onchange="fileUpdate();">
         </div>
         <input type="text" id="inputId" placeholder="IDを入力" class="inputID">
-
-        <div class="container">
-          <dl class="accordion">
-            <dt>画像設定</dt>
-            <dd id="pictureSetting" class="pictureSetting">
-              画像を選択すると表示されます。
-            </dd>
-          </dl>
-        </div>
         <button class="confirm" onclick="filebase64();">確定</button>
 
       </div>
     </div>
   </div>
 
-  <div class="modal modal2">
-    <div class="modal-window 2">
-      <div class="modal-windowTitle">
-        <div class="title">スプライトサイズ変更</div>
-        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
-      </div>
-      <div class="modal-contents">
-        <button id="sizeChange_button">キャンパスサイズに合わせる</button>
-        <input id="sizeChange_width" type="number" placeholder="横幅" class="sizeChange_input">&nbsp;px
-        <input id="sizeChange_height" type="number" placeholder="縦幅" class="sizeChange_input">&nbsp;px
-        <button class="confirm" id="sizeChange_confirm">確定</button>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="modal modal3">
+  <div class="modal modal_createSound">
     <div class="modal-window 3">
       <div class="modal-windowTitle">
         <div class="title">音声の追加</div>
@@ -267,7 +243,7 @@
     </div>
   </div>
 
-  <div class="modal modal4">
+  <div class="modal modal_version">
     <div class="modal-window 4">
       <div class="modal-windowTitle">
         <div class="title">バージョン情報</div>
@@ -289,7 +265,7 @@
     </div>
   </div>
 
-  <div class="modal modal5">
+  <div class="modal modal_quickLoad">
     <div class="modal-window 5">
       <div class="modal-windowTitle">
         <div class="title">クイックロード</div>
@@ -303,7 +279,7 @@
     </div>
   </div>
 
-  <div class="modal modal6">
+  <div class="modal modal_loadFile">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 6">
       <div class="modal-windowTitle">
@@ -319,7 +295,7 @@
     </div>
   </div>
 
-  <div class="modal modal7">
+  <div class="modal modal_contact">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 7">
       <div class="modal-windowTitle">
@@ -334,7 +310,7 @@
     </div>
   </div>
 
-  <div class="modal modal8">
+  <div class="modal modal_quickSaveManage">
     <!-- スプライト作成モーダル -->
     <div class="modal-window 8" style="width: 400px;">
       <div class="modal-windowTitle">
@@ -351,15 +327,25 @@
     </div>
   </div>
 
-  <div class="viewButton" id="viewButton" style="visibility: hidden;">
-    <span class="material-symbols-outlined icon">chevron_right</span>
+  <div class="modal modal_welcomeV2">
+    <!-- welcome v2 -->
+    <div class="modal-window 8" style="width: 400px;">
+      <div class="modal-windowTitle">
+        <div class="title">EmojiCode v2へようこそ!</div>
+        <button class="closeButton material-symbols-outlined" onclick="closeModal();">close</button>
+      </div>
+      <div class="modal-contents">
+        EmojiCode v2が<a href="https://emojicode-doc.nikachu.net/blog/2022/01/05/2.0Release" target="_blank">リリース</a>されました。<br>
+        <ul>
+          <li>v2ではステージの描画にPixiJSを利用しているため、v1.xで作ったコードが利用できない可能性があります。</li>
+          <li>正常に動作しない場合は、<a href="https://emojicode-doc.nikachu.net/blog/2023/01/05/2.0Release#対処法">このページ</a>をお読みください。</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <div class="debug_body">
-    <div class="titlebar">debugmenu</div>
-    <div class="hr"></div>
-    <button id="allDeleteIDB">IndexedDBの全削除</button>
-    <button id="uaCopy">UserAgentのコピー</button>
+  <div class="viewButton" id="viewButton" style="visibility: hidden;">
+    <span class="material-symbols-outlined icon">chevron_right</span>
   </div>
 
   <script src="console/index.js"></script>
@@ -382,7 +368,7 @@
   <script src="./emojicode/emojicode_def.js"></script>
   <script src="./emojicode/emojicode_stub.js"></script>
 
-  <script src="emojicode/defaultFunctions/index.js"></script>
+  <script src="emojicode/coreFunctions/index.js"></script>
   <script src="control/index.js"></script>
   <script src="tab/index.js"></script>
 
@@ -397,13 +383,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.40/Tone.js"></script>
   <script src="./modules/FileSaver.min.js"></script>
 
+  <!-- load PixiJS -->
+  <script src="https://cdn.jsdelivr.net/npm/pixi.js@latest/dist/browser/pixi.min.js"></script>
+
+
+  <!-- load Animation library -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/plugins/PixiPlugin.min.js"></script>
+  <!-- load webfont -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
   <script src="./EmojiCode-sprite/emojisprite.js"></script>
   <script src="./EmojiCode-audio/emojiaudio.js"></script>
-  <script src="./control/sprite.js"></script>
+  <script src="./sprite/init.js"></script>
+  <script src="./sprite/function.js"></script>
   <script src="./control/sound.js"></script>
   <script src="./control/modal.js"></script>
-  <script src="./control/save.js"></script>
-  <script src="./control/debugmenu.js"></script>
+  <script src="./control/titleButton.js"></script>
   <script src="./control/codeInput.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.10.1/ace.min.js"
@@ -414,6 +411,13 @@
 
   <script>
     (function () {
+      const parameter = location.search.slice(1).split('&');
+      parameter.forEach((e, i) => {
+        if (e == 'debug=true') {
+          debug = true;
+        }
+      })
+
       if (window.matchMedia && window.matchMedia('(max-device-width: 1000px)').matches) {
         document.getElementById('run').style.visibility = 'hidden';
         document.getElementById('run').style.width = '0px'
