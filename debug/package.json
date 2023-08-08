@@ -12,6 +12,6 @@
     "vite": "^3.2.7"
   },
   "dependencies": {
-    "blockly": "^8.0.4"
+    "blockly": "^10.0.2"
   }
 }
